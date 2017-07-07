@@ -1,0 +1,93 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..FrameXML\UI.xsd">
+    <Frame name="MiniAchievementTemplate" virtual="true" parent="AchievementFrame">
+    <Size>
+        <AbsDimension x="42" y="42"/>
+    </Size>
+    <Anchors>
+        <Anchor point="CENTER"/>
+    </Anchors>
+    <Layers>
+        <Layer level="BACKGROUND">
+            <Texture name="$parentIcon">
+                <Anchors>
+                    <Anchor point="TOPLEFT">
+                        <Offset>
+                            <AbsDimension x="8" y="-8"/>
+                        </Offset>
+                    </Anchor>
+                    <Anchor point="BOTTOMRIGHT">
+                        <Offset>
+                            <AbsDimension x="-8" y="8"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+            </Texture>
+        </Layer>
+        <Layer level="BORDER">
+            <Texture name="$parentBorder" file="Interface\Addons\Achievements\src\wotlk\Textures\UI-Achievement-Progressive-IconBorder">
+                <Anchors>
+                    <Anchor point="TOPLEFT"/>
+                    <Anchor point="BOTTOMRIGHT"/>
+                </Anchors>
+                <TexCoords left="0" right="0.65625" top="0" bottom="0.65625"/>
+            </Texture>
+        </Layer>
+        <Layer level="ARTWORK">
+            <Texture name="$parentShield" file="Interface\Addons\Achievements\src\wotlk\Textures\UI-Achievement-Progressive-Shield">
+                <Anchors>
+                    <Anchor point="TOPLEFT">
+                        <Offset>
+                            <AbsDimension x="12" y="-12"/>
+                        </Offset>
+                    </Anchor>
+                    <Anchor point="BOTTOMRIGHT">
+                        <Offset>
+                            <AbsDimension x="16" y="-16"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <TexCoords left="0" right="0.75" top="0" bottom="0.75"/>
+            </Texture>
+        </Layer>
+        <Layer level="OVERLAY">
+            <FontString name="$parentPoints" inherits="GameFontWhiteSmall" text="10" justifyV="BOTTOM">
+                <Size>
+                    <AbsDimension x="18" y="18"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="BOTTOMRIGHT">
+                        <Offset>
+                            <AbsDimension x="-2" y="3"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+            </FontString>
+        </Layer>
+    </Layers>
+    <Scripts>
+        <OnLoad>
+                local name = this:GetName();
+                this.points = _getglobal(name .. "Points");
+                this.icon = getglobal(name .. "Icon");
+        </OnLoad>
+        <OnEnter>
+                GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
+                if ( this.name ) then
+                    GameTooltip:AddDoubleLine(this.name, this.date, nil, nil, nil, .5, .5, .5);
+                end
+                if ( this.desc ) then
+                    GameTooltip:AddLine(this.desc, 1, 1, 1, 1);
+                end
+                if ( this.numCriteria ) then
+                    for i = 1, this.numCriteria do
+                        GameTooltip:AddLine(this["criteria"..i]);
+                    end
+                end
+                GameTooltip:Show();
+        </OnEnter>
+        <OnLeave>
+                GameTooltip:Hide();
+        </OnLeave>
+    </Scripts>
+</Frame>
+</Ui>

@@ -1,0 +1,64 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..FrameXML\UI.xsd">
+    <Frame name="AchievementIconFrameTemplate" virtual="true">
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentBackfill" file="Interface\Addons\Achievements\src\wotlk\Textures\UI-Achievement-IconFrame-Backfill" hidden="true">
+                    <Anchors>
+                        <Anchor point="CENTER"/>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="64" y="64"/>
+                    </Size>
+                </Texture>
+            </Layer>
+            <Layer level="BORDER">
+                <Texture name="$parentBling" file="Interface\Addons\Achievements\src\wotlk\Textures\UI-Achievement-Bling" hidden="true">
+                    <Anchors>
+                        <Anchor point="CENTER">
+                            <Offset>
+                                <AbsDimension x="-1" y="1"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="116" y="116"/>
+                    </Size>
+                </Texture>
+            </Layer>
+            <Layer level="ARTWORK">
+                <Texture name="$parentTexture" file="Interface\Icons\Spell_Misc_HellifrePVPHonorHoldFavor">
+                    <Anchors>
+                        <Anchor point="CENTER">
+                            <Offset>
+                                <AbsDimension x="0" y="3"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="50" y="50"/>
+                    </Size>
+                </Texture>
+            </Layer>
+            <Layer level="OVERLAY">
+                <Texture name="$parentOverlay" file="Interface\Addons\Achievements\src\wotlk\Textures\UI-Achievement-IconFrame">
+                    <Anchors>
+                        <Anchor point="CENTER">
+                            <Offset>
+                                <AbsDimension x="-1" y="2"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="72" y="72"/>
+                    </Size>
+                    <TexCoords left="0" right="0.5625" top="0" bottom="0.5625"/>
+                </Texture>
+            </Layer>
+        </Layers>
+        <Scripts>
+            <OnLoad>
+                    AchievementIcon_OnLoad(this);
+            </OnLoad>
+        </Scripts>
+    </Frame>
+</Ui>

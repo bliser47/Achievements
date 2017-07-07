@@ -1,0 +1,91 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..FrameXML\UI.xsd">
+    <Button name="MetaCriteriaTemplate" virtual="true">
+        <Size>
+            <AbsDimension x="155" y="30"/>
+        </Size>
+        <Anchors>
+            <Anchor point="CENTER"/>
+        </Anchors>
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentIcon">
+                    <Size x="17" y="17"/>
+                    <Anchors>
+                        <Anchor point="TOPLEFT">
+                            <Offset>
+                                <AbsDimension x="6" y="-6"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+            </Layer>
+            <Layer level="BORDER">
+                <Texture name="$parentBorder" file="Interface\Addons\Achievements\src\wotlk\Textures\UI-Achievement-Progressive-IconBorder">
+                    <Size x="30" y="30"/>
+                    <Anchors>
+                        <Anchor point="TOPLEFT"/>
+                    </Anchors>
+                    <TexCoords left="0" right="0.65625" top="0" bottom="0.65625"/>
+                </Texture>
+            </Layer>
+            <Layer level="ARTWORK">
+                <Texture name="$parentCheck" file="Interface\Addons\Achievements\src\wotlk\Textures\UI-Achievement-Criteria-Check">
+                    <Size>
+                        <AbsDimension x="20" y="16"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="RIGHT" relativePoint="LEFT">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                    <TexCoords left="0" right="0.65625" top="0" bottom="1"/>
+                </Texture>
+                <FontString name="$parentLabel" inherits="AchievementCriteriaFont" text="Fake criteria!">
+                    <Anchors>
+                        <Anchor point="LEFT" relativePoint="LEFT">
+                            <Offset>
+                                <AbsDimension x="34" y="2"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                    <Size x="125" y="20"/>
+                </FontString>
+            </Layer>
+        </Layers>
+        <Scripts>
+            <OnLoad>
+                    local name = this:GetName();
+                    this.icon = getglobal(name .. "Icon");
+                    this.label = getglobal(name .. "Label");
+                    this.check = getglobal(name .. "Check");
+                    this.border = getglobal(name .. "Border");
+            </OnLoad>
+            <OnEnter>
+                    if ( this.date ) then
+                        GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
+                        GameTooltip:AddLine(string.format(ACHIEVEMENT_META_COMPLETED_DATE, this.date), 1, 1, 1);
+                        GameTooltip:Show();
+                    end
+            </OnEnter>
+            <OnLeave>
+                    GameTooltip:Hide();
+            </OnLeave>
+            <OnClick>
+                    if ( this.id ) then
+                        AchievementFrame_SelectAchievement(this.id);
+                    end
+            </OnClick>
+        </Scripts>
+        <HighlightTexture file="Interface\FriendsFrame\UI-FriendsFrame-HighlightBar" alphaMode="ADD">
+            <Anchors>
+                <Anchor point="TOPLEFT"/>
+                <Anchor point="BOTTOMRIGHT">
+                    <Offset x="0" y="2"/>
+                </Anchor>
+            </Anchors>
+            <Color r="1" g="1" b="1" a=".15"/>
+        </HighlightTexture>
+    </Button>
+</Ui>

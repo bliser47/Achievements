@@ -1,0 +1,59 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..FrameXML\UI.xsd">
+    <Button name="AchievementCategoryTemplate" virtual="true">
+        <Size>
+            <AbsDimension x="158" y="24"/>
+        </Size>
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentBackground" file="Interface\Addons\Achievements\src\wotlk\Textures\UI-Achievement-Category-Background">
+                    <Size x="170" y="32"/>
+                    <Anchors>
+                        <Anchor point="TOPLEFT"/>
+                        <Anchor point="TOPRIGHT"/>
+                    </Anchors>
+                    <TexCoords left="0" right="0.6640625" top="0" bottom="1"/>
+                </Texture>
+            </Layer>
+            <Layer level="ARTWORK">
+                <FontString name="$parentLabel" text="This is a Category" inherits="GameFontNormalLeftBottom" wordwrap="false">
+                    <Anchors>
+                        <Anchor point="BOTTOMLEFT">
+                            <Offset x="16" y="4"/>
+                        </Anchor>
+                        <Anchor point="TOPRIGHT">
+                            <Offset x="-8" y="-4"/>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
+        <Scripts>
+            <OnLoad>
+                    AchievementCategoryButton_OnLoad(this);
+            </OnLoad>
+            <OnClick>
+                    AchievementCategoryButton_OnClick(this, button, down);
+            </OnClick>
+            <OnEnter>
+                    if ( this.showTooltipFunc ) then
+                        this.showTooltipFunc(this);
+                    end
+            </OnEnter>
+            <OnLeave>
+                    GameTooltip:SetMinimumWidth(0, 0);
+                    GameTooltip:Hide();
+            </OnLeave>
+        </Scripts>
+        <HighlightTexture file="Interface\Addons\Achievements\src\wotlk\Textures\UI-Achievement-Category-Highlight" alphaMode="ADD">
+            <Anchors>
+                <Anchor point="TOPLEFT">
+                    <Offset x="0" y="0"/>
+                </Anchor>
+                <Anchor point="BOTTOMRIGHT">
+                    <Offset x="-1" y="-7"/>
+                </Anchor>
+            </Anchors>
+            <TexCoords left="0" right="0.6640625" top="0" bottom="1"/>
+        </HighlightTexture>
+    </Button>
+</Ui>

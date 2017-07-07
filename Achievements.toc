@@ -1,0 +1,43 @@
+## Title: Achievements
+## Version: 0.1
+## Author: Bliser
+
+src\core\GlobalStrings.lua
+
+src\xml\Font\Fonts.xml
+src\xml\Font\FontStyles.xml
+
+src\wotlk\FrameXML\HybridScrollFrame.lua
+src\wotlk\FrameXML\HybridScrollFrame.xml
+
+
+
+src\core\Tools\Debug.lua
+
+src\core\Controller\Category.lua
+
+src\core\Achievement\Globals.lua
+src\core\Achievement\AchievementFrameCategories.lua
+src\core\Achievement\AchievementCategoryButton.lua
+src\core\Achievement\AchievementFrameAchievements.lua
+src\core\Achievement\AchievementIcon.lua
+src\core\Achievement\AchievementShield.lua
+src\core\Achievement\AchievementButton.lua
+src\core\Achievement\SummaryFrame.lua
+src\core\Achievement\AchievementComparisonPlayerButton.lua
+src\core\Achievement\AchievementFrame.lua
+
+src\xml\AchievementFrame\templates\AchievementFrameSummaryCategoryTemplate.xml
+src\xml\AchievementFrame\templates\AchievementCheckButtonTemplate.xml
+src\xml\AchievementFrame\templates\MiniAchievementTemplate.xml
+src\xml\AchievementFrame\templates\MetaCriteriaTemplate.xml
+src\xml\AchievementFrame\templates\AchievementProgressBarTemplate.xml
+src\xml\AchievementFrame\templates\AchievementHeaderStatusBarTemplate.xml
+src\xml\AchievementFrame\templates\AchievementCategoryTemplate.xml
+src\xml\AchievementFrame\templates\AchievementIconFrameTemplate.xml
+src\xml\AchievementFrame\templates\AchievementCriteriaTemplate.xml
+src\xml\AchievementFrame\templates\AchievementTemplate.xml
+src\xml\AchievementFrame\templates\ComparisonPlayerTemplate.xml
+src\xml\AchievementFrame\templates\SummaryAchievementTemplate.xml
+src\xml\AchievementFrame\AchievementFrame.xml
+

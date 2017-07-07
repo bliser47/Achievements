@@ -1,0 +1,79 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..FrameXML\UI.xsd">
+    <StatusBar name="AchievementHeaderStatusBarTemplate" virtual="true">
+        <Anchors>
+            <Anchor point="TOP">
+                <!-- That's right. -0. -->
+                <Offset x="-0" y="-17"/>
+            </Anchor>
+        </Anchors>
+        <Layers>
+            <Layer level="OVERLAY">
+                <FontString name="$parentTitle" inherits="GameFontNormal" text="ACHIEVEMENTS_COMPLETED">
+                    <Anchors>
+                        <Anchor point="LEFT">
+                            <Offset>
+                                <AbsDimension x="6" y="4"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <FontString name="$parentText" inherits="GameFontHighlight">
+                    <Size>
+                        <AbsDimension x="0" y="14"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="RIGHT">
+                            <Offset x="-5" y="3"/>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <Texture name="$parentLeft" file="Interface\Addons\Achievements\src\wotlk\Textures\UI-Achievement-Header">
+                    <Size>
+                        <AbsDimension x="32" y="48"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="TOPLEFT">
+                            <Offset x="-15" y="16"/>
+                        </Anchor>
+                    </Anchors>
+                    <TexCoords left="0.423828125" right="0.486" top="0.56640625" bottom="0.75"/>
+                </Texture>
+                <Texture name="$parentRight" file="Interface\Addons\Achievements\src\wotlk\Textures\UI-Achievement-Header">
+                    <Size>
+                        <AbsDimension x="32" y="48"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="TOPRIGHT">
+                            <Offset x="15" y="16"/>
+                        </Anchor>
+                    </Anchors>
+                    <TexCoords right="0.423828125" left="0.486" bottom="0.75" top="0.56640625"/>
+                </Texture>
+                <Texture name="$parentMiddle" file="Interface\Addons\Achievements\src\wotlk\Textures\UI-Achievement-Header">
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativeTo="$parentLeft" relativePoint="TOPRIGHT"/>
+                        <Anchor point="BOTTOMRIGHT" relativeTo="$parentRight" relativePoint="BOTTOMLEFT"/>
+                    </Anchors>
+                    <TexCoords right="0.486" left="0.889224609375" bottom="0.75" top="0.56640625"/>
+                </Texture>
+            </Layer>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentFillBar">
+                    <Size>
+                        <AbsDimension x="0" y="15"/>
+                    </Size>
+                    <Color r="0" g="0" b="0" a="0.5"/>
+                </Texture>
+            </Layer>
+        </Layers>
+        <Scripts>
+            <OnLoad>
+                    local name = this:GetName();
+                    this.title = getglobal(name .. "Title");
+                    this.text = getglobal(name .. "Text");
+            </OnLoad>
+        </Scripts>
+        <BarTexture name="$parentBar" file="Interface\PaperDollInfoFrame\UI-Character-Skills-Bar"/>
+        <BarColor r="0" g="1" b="0"/>
+    </StatusBar>
+</Ui>

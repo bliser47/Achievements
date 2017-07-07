@@ -1,0 +1,218 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..FrameXML\UI.xsd">
+    <Frame name="ComparisonPlayerTemplate" virtual="true">
+        <Size x="498" y="50"/>
+        <Backdrop edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
+            <EdgeSize>
+                <AbsValue val="16"/>
+            </EdgeSize>
+        </Backdrop>
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentBackground" file="Interface\Addons\Achievements\src\wotlk\Textures\UI-Achievement-Parchment-Horizontal">
+                    <Anchors>
+                        <Anchor point="TOPLEFT">
+                            <Offset>
+                                <AbsDimension x="3" y="-3"/>
+                            </Offset>
+                        </Anchor>
+                        <Anchor point="BOTTOMRIGHT">
+                            <Offset>
+                                <AbsDimension x="-3" y="3"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                    <TexCoords left="0" right="1" top="0" bottom="0.25"/>
+                </Texture>
+            </Layer>
+            <Layer level="ARTWORK">
+                <Texture name="$parentTitleBackground" file="Interface\Addons\Achievements\src\wotlk\Textures\UI-Achievement-Title">
+                    <Size>
+                        <AbsDimension x="0" y="20"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="TOPLEFT">
+                            <Offset>
+                                <AbsDimension x="5" y="-5"/>
+                            </Offset>
+                        </Anchor>
+                        <Anchor point="TOPRIGHT">
+                            <Offset>
+                                <AbsDimension x="-5" y="-5"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                    <TexCoords left="0" right="0.9765625" top="0" bottom="0.3125"/>
+                    <Color r="1" g="1" b="1" a=".8"/>
+                </Texture>
+                <Texture name="$parentGlow" file="Interface\Addons\Achievements\src\wotlk\Textures\UI-Achievement-Parchment-Highlight">
+                    <Size>
+                        <AbsDimension x="10" y="128"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativeTo="$parentTitleBackground" relativePoint="BOTTOMLEFT">
+                            <Offset x="0" y="2"/>
+                        </Anchor>
+                        <Anchor point="BOTTOMRIGHT">
+                            <Offset x="0" y="4"/>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+            </Layer>
+            <Layer level="OVERLAY">
+                <FontString name="$parentLabel" inherits="GameFontHighlightMedium" text="For the Alliance!">
+                    <Anchors>
+                        <Anchor point="TOP" relativeTo="$parentTitleBackground" relativePoint="TOP">
+                            <Offset>
+                                <AbsDimension x="0" y="0"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="260" y="20"/>
+                    </Size>
+                </FontString>
+                <FontString name="$parentDateCompleted" inherits="AchievementDateFont" text="5/16/08" hidden="true">
+                    <Anchors>
+                        <Anchor point="TOPRIGHT">
+                            <Offset>
+                                <AbsDimension x="-63" y="-8"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="100" y="14"/>
+                    </Size>
+                </FontString>
+                <FontString name="$parentDescription" inherits="AchievementDescriptionFont">
+                    <Anchors>
+                        <Anchor point="TOP">
+                            <Offset>
+                                <AbsDimension x="0" y="-30"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                    <Size>
+                        <AbsDimension x="380" y="13"/>
+                    </Size>
+                </FontString>
+            </Layer>
+        </Layers>
+        <Scripts>
+            <OnLoad>
+                    AchievementComparisonPlayerButton_OnLoad(this);
+            </OnLoad>
+        </Scripts>
+        <Frames>
+            <Frame name="$parentIcon">
+                <Size>
+                    <AbsDimension x="48" y="48"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="TOPLEFT">
+                        <Offset>
+                            <AbsDimension x="3" y="-3"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="BORDER">
+                        <Texture name="$parentBling" file="Interface\Addons\Achievements\src\wotlk\Textures\UI-Achievement-Bling" hidden="true">
+                            <Anchors>
+                                <Anchor point="CENTER">
+                                    <Offset>
+                                        <AbsDimension x="-1" y="1"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="84" y="84"/>
+                            </Size>
+                        </Texture>
+                    </Layer>
+                    <Layer level="ARTWORK">
+                        <Texture name="$parentTexture" file="Interface\Addons\Achievements\src\wotlk\Icons\Default">
+                            <Anchors>
+                                <Anchor point="CENTER">
+                                    <Offset>
+                                        <AbsDimension x="0" y="3"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="36" y="36"/>
+                            </Size>
+                        </Texture>
+                    </Layer>
+                    <Layer level="OVERLAY">
+                        <Texture name="$parentOverlay" file="Interface\Addons\Achievements\src\wotlk\Textures\UI-Achievement-IconFrame">
+                            <Anchors>
+                                <Anchor point="CENTER">
+                                    <Offset>
+                                        <AbsDimension x="-1" y="2"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="46" y="46"/>
+                            </Size>
+                            <TexCoords left="0" right="0.5625" top="0" bottom="0.5625"/>
+                        </Texture>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnLoad>
+                            AchievementIcon_OnLoad(this);
+                    </OnLoad>
+                </Scripts>
+            </Frame>
+            <Frame name="$parentShield">
+                <Size>
+                    <AbsDimension x="48" y="48"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="TOPRIGHT">
+                        <Offset>
+                            <AbsDimension x="-10" y="-4"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture name="$parentIcon" file="Interface\Addons\Achievements\src\wotlk\Textures\UI-Achievement-Shields">
+                            <Size>
+                                <AbsDimension x="48" y="48"/>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="TOPRIGHT">
+                                    <Offset>
+                                        <AbsDimension x="0" y="0"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                            <TexCoords left="0" right=".5" top="0" bottom="1"/>
+                        </Texture>
+                    </Layer>
+                    <Layer level="OVERLAY">
+                        <FontString name="$parentPoints" inherits="GameFontNormal" text="60">
+                            <Anchors>
+                                <Anchor point="CENTER">
+                                    <Offset>
+                                        <AbsDimension x="-1" y="3"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                            <Size>
+                                <AbsDimension x="40" y="26"/>
+                            </Size>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Scripts>
+                    <OnLoad>
+                            AchievementShield_OnLoad(this);
+                    </OnLoad>
+                </Scripts>
+            </Frame>
+        </Frames>
+    </Frame>
+</Ui>

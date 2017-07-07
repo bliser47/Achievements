@@ -1,0 +1,52 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..FrameXML\UI.xsd">
+    <CheckButton name="AchievementCheckButtonTemplate" virtual="true">
+        <Size>
+            <AbsDimension x="15" y="15"/>
+        </Size>
+        <Layers>
+            <Layer level="ARTWORK">
+                <FontString name="$parentText" inherits="GameFontNormalSmall" text="TRACK_ACHIEVEMENT">
+                    <Anchors>
+                        <Anchor point="LEFT" relativePoint="RIGHT"/>
+                    </Anchors>
+                    <Color r=".6" g=".6" b=".6" a="1"/>
+                </FontString>
+            </Layer>
+        </Layers>
+        <HitRectInsets>
+            <AbsInset left="0" right="-100" top="0" bottom="0"/>
+        </HitRectInsets>
+        <Scripts>
+            <OnClick>
+                    if ( this:GetChecked() ) then
+                        PlaySound("igMainMenuOptionCheckBoxOn");
+                    else
+                        PlaySound("igMainMenuOptionCheckBoxOff");
+                    end
+                    local tracked = AchievementButton_ToggleTracking(this:GetParent().id);
+                    if ( not tracked ) then
+                        this:SetChecked(0);
+                    end
+            </OnClick>
+            <OnEnter>
+                    GameTooltip:SetOwner(this, "ANCHOR_RIGHT");
+                    if ( this:GetChecked() ) then
+                        GameTooltip:SetText(UNTRACK_ACHIEVEMENT_TOOLTIP, nil, nil, nil, nil, 1);
+                    else
+                        GameTooltip:SetText(TRACK_ACHIEVEMENT_TOOLTIP, nil, nil, nil, nil, 1);
+                    end
+            </OnEnter>
+            <OnLeave>
+                    GameTooltip:Hide();
+            </OnLeave>
+            <OnShow>
+                    this:SetChecked(IsTrackedAchievement(this:GetParent().id));
+            </OnShow>
+        </Scripts>
+        <NormalTexture file="Interface\Buttons\UI-CheckBox-Up"/>
+        <PushedTexture file="Interface\Buttons\UI-CheckBox-Down"/>
+        <HighlightTexture file="Interface\Buttons\UI-CheckBox-Highlight" alphaMode="ADD"/>
+        <CheckedTexture file="Interface\Buttons\UI-CheckBox-Check"/>
+        <DisabledCheckedTexture file="Interface\Buttons\UI-CheckBox-Check-Disabled"/>
+    </CheckButton>
+</Ui>
