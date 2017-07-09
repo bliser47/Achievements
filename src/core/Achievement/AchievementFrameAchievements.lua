@@ -1,5 +1,13 @@
 -- [[ AchievementFrameAchievements ]] --
 
+function updateTrackedAchievements (params)
+    local count = table.getn(params);
+    for i = 1, count do
+        ACHIEVEMENT_TRACKED_ACHIEVEMENTS[params[i]] = true;
+    end
+end
+
+
 function AchievementFrameAchievements_OnLoad (self)
     AchievementFrameAchievementsContainerScrollBar.Show =
     function (self)
@@ -55,8 +63,8 @@ function AchievementFrameAchievements_OnEvent (self, event, params)
             AchievementFrameAchievementsObjectives.id = nil; -- Force redraw
         end
     elseif ( event == "TRACKED_ACHIEVEMENT_UPDATE" ) then
-        for k, v in next, trackedAchievements do
-            trackedAchievements[k] = nil;
+        for k, v in next, ACHIEVEMENT_TRACKED_ACHIEVEMENTS do
+            ACHIEVEMENT_TRACKED_ACHIEVEMENTS[k] = nil;
         end
 
         updateTrackedAchievements(GetTrackedAchievements());

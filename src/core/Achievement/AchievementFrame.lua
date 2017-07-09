@@ -154,19 +154,18 @@ function AchievementObjectives_DisplayProgressiveAchievement (objectivesFrame, i
     local ACHIEVEMENTMODE_PROGRESSIVE = 2;
     local achievementID = id;
 
-    local achievementList = achievementList;
-    for i in next, achievementList do
-        achievementList[i] = nil;
+    for i in next, ACHIEVEMENT_ACHIEVEMENT_LIST do
+        ACHIEVEMENT_ACHIEVEMENT_LIST[i] = nil;
     end
 
-    tinsert(achievementList, 1, achievementID);
+    tinsert(ACHIEVEMENT_ACHIEVEMENT_LIST, 1, achievementID);
     while GetPreviousAchievement(achievementID) do
-        tinsert(achievementList, 1, GetPreviousAchievement(achievementID));
+        tinsert(ACHIEVEMENT_ACHIEVEMENT_LIST, 1, GetPreviousAchievement(achievementID));
         achievementID = GetPreviousAchievement(achievementID);
     end
 
     local i = 0;
-    for index, achievementID in ipairs(achievementList) do
+    for index, achievementID in ipairs(ACHIEVEMENT_ACHIEVEMENT_LIST) do
         local _, achievementName, points, completed, month, day, year, description, flags, iconpath = GetAchievementInfo(achievementID);
 
         local miniAchievement = AchievementButton_GetMiniAchievement(index);
@@ -177,9 +176,9 @@ function AchievementObjectives_DisplayProgressiveAchievement (objectivesFrame, i
         if ( index == 1 ) then
             miniAchievement:SetPoint("TOPLEFT", objectivesFrame, "TOPLEFT", -4, -4);
         elseif ( index == 7 ) then
-            miniAchievement:SetPoint("TOPLEFT", miniTable[1], "BOTTOMLEFT", 0, -8);
+            miniAchievement:SetPoint("TOPLEFT", ACHIEVEMENT_MINI_TABLE[1], "BOTTOMLEFT", 0, -8);
         else
-            miniAchievement:SetPoint("TOPLEFT", miniTable[index-1], "TOPRIGHT", 4, 0);
+            miniAchievement:SetPoint("TOPLEFT", ACHIEVEMENT_MINI_TABLE[index-1], "TOPRIGHT", 4, 0);
         end
 
         miniAchievement.points:SetText(points);
@@ -244,7 +243,7 @@ function AchievementObjectives_DisplayCriteria (objectivesFrame, id)
                 numRows = numRows + 2;
             elseif ( math.fmod(metas, 2) == 0 ) then
                 yPos = -((metas/2 - 1) * 28) - 8;
-                metaCriteriaTable[metas-1]:SetPoint("TOPLEFT", objectivesFrame, "TOPLEFT", 20, yPos);
+                ACHIEVEMENT_META_CRITERIA_TABLE[metas-1]:SetPoint("TOPLEFT", objectivesFrame, "TOPLEFT", 20, yPos);
                 metaCriteria:SetPoint("TOPLEFT", objectivesFrame, "TOPLEFT", 210, yPos);
             else
                 metaCriteria:SetPoint("TOPLEFT", objectivesFrame, "TOPLEFT", 20, -(math.ceil(metas/2 - 1) * 28) - 8);
@@ -293,7 +292,7 @@ function AchievementObjectives_DisplayCriteria (objectivesFrame, id)
             if ( progressBars == 1 ) then
                 progressBar:SetPoint("TOP", objectivesFrame, "TOP", 4, -4);
             else
-                progressBar:SetPoint("TOP", progressBarTable[progressBars-1], "BOTTOM", 0, 0);
+                progressBar:SetPoint("TOP", ACHIEVEMENT_PROGRESS_BAR_TABLE[progressBars-1], "BOTTOM", 0, 0);
             end
 
             progressBar.text:SetText(string.format("%s", quantityString));
@@ -316,7 +315,7 @@ function AchievementObjectives_DisplayCriteria (objectivesFrame, id)
                 end
 
             else
-                criteria:SetPoint("TOPLEFT", criteriaTable[textStrings-1], "BOTTOMLEFT", 0, 0);
+                criteria:SetPoint("TOPLEFT", ACHIEVEMENT_CRITERIA_TABLE[textStrings-1], "BOTTOMLEFT", 0, 0);
             end
 
             if ( objectivesFrame.completed and completed ) then
@@ -354,12 +353,12 @@ function AchievementObjectives_DisplayCriteria (objectivesFrame, id)
 
     if ( textStrings > 0 and progressBars > 0 ) then
         -- If we have text criteria and progressBar criteria, display the progressBar criteria first and position the textStrings under them.
-        criteriaTable[1]:ClearAllPoints();
+        ACHIEVEMENT_CRITERIA_TABLE[1]:ClearAllPoints();
         if ( textStrings == 1 ) then
-            criteriaTable[1]:SetPoint("TOP", progressBarTable[progressBars], "BOTTOM", -14, -4);
+            ACHIEVEMENT_CRITERIA_TABLE[1]:SetPoint("TOP", ACHIEVEMENT_PROGRESS_BAR_TABLE[progressBars], "BOTTOM", -14, -4);
         else
-            criteriaTable[1]:SetPoint("TOP", progressBarTable[progressBars], "BOTTOM", 0, -4);
-            criteriaTable[1]:SetPoint("LEFT", objectivesFrame, "LEFT", 0, 0);
+            ACHIEVEMENT_CRITERIA_TABLE[1]:SetPoint("TOP", ACHIEVEMENT_PROGRESS_BAR_TABLE[progressBars], "BOTTOM", 0, -4);
+            ACHIEVEMENT_CRITERIA_TABLE[1]:SetPoint("LEFT", objectivesFrame, "LEFT", 0, 0);
         end
     elseif ( textStrings > 1 ) then
         -- Figure out if we can make multiple columns worth of criteria instead of one long one
@@ -368,7 +367,7 @@ function AchievementObjectives_DisplayCriteria (objectivesFrame, id)
             local step;
             local rows = 1;
             local position = 0;
-            for i=1, table.getn(criteriaTable) do
+            for i=1, table.getn(ACHIEVEMENT_CRITERIA_TABLE) do
                 position = position + 1;
                 if ( position > numColumns ) then
                     position = position - numColumns;
@@ -376,11 +375,11 @@ function AchievementObjectives_DisplayCriteria (objectivesFrame, id)
                 end
 
                 if ( rows == 1 ) then
-                    criteriaTable[i]:ClearAllPoints();
-                    criteriaTable[i]:SetPoint("TOPLEFT", objectivesFrame, "TOPLEFT", (position - 1)*(ACHIEVEMENTUI_MAXCONTENTWIDTH/numColumns), 0);
+                    ACHIEVEMENT_CRITERIA_TABLE[i]:ClearAllPoints();
+                    ACHIEVEMENT_CRITERIA_TABLE[i]:SetPoint("TOPLEFT", objectivesFrame, "TOPLEFT", (position - 1)*(ACHIEVEMENTUI_MAXCONTENTWIDTH/numColumns), 0);
                 else
-                    criteriaTable[i]:ClearAllPoints();
-                    criteriaTable[i]:SetPoint("TOPLEFT", criteriaTable[position + ((rows - 2) * numColumns)], "BOTTOMLEFT", 0, 0);
+                    ACHIEVEMENT_CRITERIA_TABLE[i]:ClearAllPoints();
+                    ACHIEVEMENT_CRITERIA_TABLE[i]:SetPoint("TOPLEFT", ACHIEVEMENT_CRITERIA_TABLE[position + ((rows - 2) * numColumns)], "BOTTOMLEFT", 0, 0);
                 end
             end
             numRows = ceil(numRows/numColumns);

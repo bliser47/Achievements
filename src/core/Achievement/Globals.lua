@@ -1,5 +1,3 @@
--- TODO: Make this a LOT safer! (we don't like globals)
-
 UIPanelWindows["AchievementFrame"] = { area = "doublewide", pushable = 0, width = 840, xoffset = 80, whileDead = 1 };
 
 ACHIEVEMENT_SUMMARY_CATEGORY = "Summary"
@@ -123,20 +121,9 @@ ACHIEVEMENT_TEXTURES_TO_LOAD = {
     ]]--
 }
 
-
--- TODO: The SUPER UNSAFE variable start here
--- TODO: Please make this safe :)
-trackedAchievements = {};
-function updateTrackedAchievements (params)
-    local count = table.getn(params);
-    for i = 1, count do
-        trackedAchievements[params[i]] = true;
-    end
-end
-
-
-criteriaTable = {}
-miniTable = {};
-progressBarTable = {};
-metaCriteriaTable = {};
-achievementList = {};
+ACHIEVEMENT_TRACKED_ACHIEVEMENTS = {};
+ACHIEVEMENT_CRITERIA_TABLE = {}
+ACHIEVEMENT_MINI_TABLE = {};
+ACHIEVEMENT_PROGRESS_BAR_TABLE = {};
+ACHIEVEMENT_META_CRITERIA_TABLE = {};
+ACHIEVEMENT_ACHIEVEMENT_LIST = {};

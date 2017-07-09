@@ -171,7 +171,7 @@ function AchievementButton_OnClick (self, ignoreModifiers)
 end
 
 function AchievementButton_ToggleTracking (id)
-    if ( trackedAchievements[id] ) then
+    if ( ACHIEVEMENT_TRACKED_ACHIEVEMENTS[id] ) then
         RemoveTrackedAchievement(id);
         AchievementFrameAchievements_ForceUpdate();
         WatchFrame_Update();
@@ -393,71 +393,66 @@ end
 
 
 function AchievementButton_ResetCriteria ()
-    AchievementButton_ResetTable(criteriaTable);
+    AchievementButton_ResetTable(ACHIEVEMENT_CRITERIA_TABLE);
 end
 
 function AchievementButton_GetCriteria (index)
-    local criteriaTable = criteriaTable;
-
-    if ( criteriaTable[index] ) then
-        return criteriaTable[index];
+    if ( ACHIEVEMENT_CRITERIA_TABLE[index] ) then
+        return ACHIEVEMENT_CRITERIA_TABLE[index];
     end
 
     local frame = CreateFrame("FRAME", "AchievementFrameCriteria" .. index, AchievementFrameAchievements, "AchievementCriteriaTemplate");
     AchievementFrame_LocalizeCriteria(frame);
-    criteriaTable[index] = frame;
+    ACHIEVEMENT_CRITERIA_TABLE[index] = frame;
 
     return frame;
 end
 
 function AchievementButton_ResetMiniAchievements ()
-    AchievementButton_ResetTable(miniTable);
+    AchievementButton_ResetTable(ACHIEVEMENT_MINI_TABLE);
 end
 
 function AchievementButton_GetMiniAchievement (index)
-    local miniTable = miniTable;
-    if ( miniTable[index] ) then
-        return miniTable[index];
+    if ( ACHIEVEMENT_MINI_TABLE[index] ) then
+        return ACHIEVEMENT_MINI_TABLE[index];
     end
 
     local frame = CreateFrame("FRAME", "AchievementFrameMiniAchievement" .. index, AchievementFrameAchievements, "MiniAchievementTemplate");
     AchievementButton_LocalizeMiniAchievement(frame);
-    miniTable[index] = frame;
+    ACHIEVEMENT_MINI_TABLE[index] = frame;
 
     return frame;
 end
 
 
 function AchievementButton_ResetProgressBars ()
-    AchievementButton_ResetTable(progressBarTable);
+    AchievementButton_ResetTable(ACHIEVEMENT_PROGRESS_BAR_TABLE);
 end
 
 function AchievementButton_GetProgressBar (index)
-    local progressBarTable = progressBarTable;
-    if ( progressBarTable[index] ) then
-        return progressBarTable[index];
+    if ( ACHIEVEMENT_PROGRESS_BAR_TABLE[index] ) then
+        return ACHIEVEMENT_PROGRESS_BAR_TABLE[index];
     end
 
     local frame = CreateFrame("STATUSBAR", "AchievementFrameProgressBar" .. index, AchievementFrameAchievements, "AchievementProgressBarTemplate");
     AchievementButton_LocalizeProgressBar(frame);
-    progressBarTable[index] = frame;
+    ACHIEVEMENT_PROGRESS_BAR_TABLE[index] = frame;
 
     return frame;
 end
 
 function AchievementButton_ResetMetas ()
-    AchievementButton_ResetTable(metaCriteriaTable);
+    AchievementButton_ResetTable(ACHIEVEMENT_META_CRITERIA_TABLE);
 end
 
 function AchievementButton_GetMeta (index)
-    local metaCriteriaTable = metaCriteriaTable;
-    if ( metaCriteriaTable[index] ) then
-        return metaCriteriaTable[index];
+    if ( ACHIEVEMENT_META_CRITERIA_TABLE[index] ) then
+        return ACHIEVEMENT_META_CRITERIA_TABLE[index];
     end
 
     local frame = CreateFrame("BUTTON", "AchievementFrameMeta" .. index, AchievementFrameAchievements, "MetaCriteriaTemplate");
     AchievementButton_LocalizeMetaAchievement(frame);
-    metaCriteriaTable[index] = frame;
+    ACHIEVEMENT_META_CRITERIA_TABLE[index] = frame;
 
     return frame;
 end
