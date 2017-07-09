@@ -448,8 +448,12 @@
                 </Layer>
             </Layers>
             <Scripts>
-                <OnLoad function="AchievementFrameAchievements_OnLoad"/>
-                <OnEvent function="AchievementFrameAchievements_OnEvent"/>
+                <OnLoad>
+                        AchievementFrameAchievements_OnLoad(this);
+                </OnLoad>
+                <OnEvent>
+                        AchievementFrameAchievements_OnEvent(this,event,arg1);
+                </OnEvent>
                 <OnHide>
                         -- TODO: Support filter
                         --AchievementFrameFilterDropDown:Hide();

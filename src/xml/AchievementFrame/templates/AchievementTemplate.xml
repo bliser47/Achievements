@@ -431,6 +431,7 @@
                     </Anchor>
                 </Anchors>
             </Frame>
+            <!-- TODO: Support tracking
             <CheckButton name="$parentTracked" hidden="true" inherits="AchievementCheckButtonTemplate">
                 <Anchors>
                     <Anchor point="TOPLEFT">
@@ -438,6 +439,7 @@
                     </Anchor>
                 </Anchors>
             </CheckButton>
+            -->
         </Frames>
     </Button>
 </Ui>

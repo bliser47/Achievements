@@ -6,7 +6,11 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/Achievement/AchievementButton.lua" afterPath="$PROJECT_DIR$/src/core/Achievement/AchievementButton.lua" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/Achievement/AchievementFrame.lua" afterPath="$PROJECT_DIR$/src/core/Achievement/AchievementFrame.lua" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/Achievement/AchievementFrameAchievements.lua" afterPath="$PROJECT_DIR$/src/core/Achievement/AchievementFrameAchievements.lua" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/Achievement/Globals.lua" afterPath="$PROJECT_DIR$/src/core/Achievement/Globals.lua" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/Achievement/AchievementFrameCategories.lua" afterPath="$PROJECT_DIR$/src/core/Achievement/AchievementFrameCategories.lua" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/Achievement/SummaryFrame.lua" afterPath="$PROJECT_DIR$/src/core/Achievement/SummaryFrame.lua" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/Controller/Category.lua" afterPath="$PROJECT_DIR$/src/core/Controller/Category.lua" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xml/AchievementFrame/AchievementFrame.xml" afterPath="$PROJECT_DIR$/src/xml/AchievementFrame/AchievementFrame.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xml/AchievementFrame/templates/AchievementTemplate.xml" afterPath="$PROJECT_DIR$/src/xml/AchievementFrame/templates/AchievementTemplate.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,31 +28,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="Achievements.toc" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Achievements.toc">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
-              <caret line="26" column="52" lean-forward="false" selection-start-line="26" selection-start-column="52" selection-end-line="26" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="AchievementButton.lua" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/core/Achievement/AchievementButton.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="558">
-              <caret line="438" column="34" lean-forward="false" selection-start-line="438" selection-start-column="34" selection-end-line="438" selection-end-column="34" />
+            <state relative-caret-position="175">
+              <caret line="302" column="96" lean-forward="true" selection-start-line="302" selection-start-column="96" selection-end-line="302" selection-end-column="96" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Globals.lua" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Globals.lua" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/core/Achievement/Globals.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="98" column="8" lean-forward="false" selection-start-line="98" selection-start-column="8" selection-end-line="98" selection-end-column="8" />
+            <state relative-caret-position="791">
+              <caret line="78" column="20" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AchievementFrameCategories.lua" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/core/Achievement/AchievementFrameCategories.lua">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="351">
+              <caret line="353" column="4" lean-forward="false" selection-start-line="353" selection-start-column="4" selection-end-line="353" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Category.lua" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/core/Controller/Category.lua">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="443">
+              <caret line="35" column="3" lean-forward="true" selection-start-line="35" selection-start-column="3" selection-end-line="35" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -57,18 +71,8 @@
       <file leaf-file-name="AchievementFrameAchievements.lua" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/core/Achievement/AchievementFrameAchievements.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="68" column="0" lean-forward="true" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GlobalStrings.lua" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/core/GlobalStrings.lua">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="53" lean-forward="false" selection-start-line="8" selection-start-column="53" selection-end-line="8" selection-end-column="53" />
+            <state relative-caret-position="666">
+              <caret line="166" column="35" lean-forward="false" selection-start-line="166" selection-start-column="35" selection-end-line="166" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -77,38 +81,39 @@
       <file leaf-file-name="AchievementFrame.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/xml/AchievementFrame/AchievementFrame.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="840" column="0" lean-forward="true" selection-start-line="840" selection-start-column="0" selection-end-line="840" selection-end-column="0" />
+            <state relative-caret-position="605">
+              <caret line="471" column="37" lean-forward="true" selection-start-line="471" selection-start-column="37" selection-end-line="471" selection-end-column="37" />
               <folding>
-                <element signature="n#Frame#1;n#Ui#0;n#!!top" expanded="false" />
-                <marker date="1499383993875" expanded="true" signature="15796:15874" ph="..." />
-                <marker date="1499383993875" expanded="true" signature="15980:16076" ph="..." />
-                <marker date="1499383993875" expanded="true" signature="20244:20442" ph="..." />
-                <marker date="1499383993875" expanded="true" signature="20476:20560" ph="..." />
-                <marker date="1499383993875" expanded="true" signature="39252:39335" ph="..." />
-                <marker date="1499383993875" expanded="true" signature="39370:39552" ph="..." />
-                <marker date="1499383993875" expanded="true" signature="39587:39658" ph="..." />
-                <marker date="1499383993875" expanded="true" signature="40037:40372" ph="..." />
-                <marker date="1499383993875" expanded="true" signature="40062:40353" ph="comment" />
-                <marker date="1499383993875" expanded="true" signature="40467:40519" ph="..." />
-                <marker date="1499383993875" expanded="true" signature="40545:40597" ph="..." />
-                <marker date="1499383993875" expanded="true" signature="40623:40675" ph="..." />
+                <marker date="1499604963181" expanded="true" signature="15796:15874" ph="..." />
+                <marker date="1499604963181" expanded="true" signature="15980:16076" ph="..." />
+                <marker date="1499604963181" expanded="true" signature="20096:20180" ph="..." />
+                <marker date="1499604963181" expanded="true" signature="20215:20311" ph="..." />
+                <marker date="1499604963181" expanded="true" signature="20346:20544" ph="..." />
+                <marker date="1499604963181" expanded="true" signature="20578:20662" ph="..." />
+                <marker date="1499604963181" expanded="true" signature="39354:39437" ph="..." />
+                <marker date="1499604963181" expanded="true" signature="39472:39654" ph="..." />
+                <marker date="1499604963181" expanded="true" signature="39689:39760" ph="..." />
+                <marker date="1499604963181" expanded="true" signature="40139:40474" ph="..." />
+                <marker date="1499604963181" expanded="true" signature="40164:40455" ph="comment" />
+                <marker date="1499604963181" expanded="true" signature="40569:40621" ph="..." />
+                <marker date="1499604963181" expanded="true" signature="40647:40699" ph="..." />
+                <marker date="1499604963181" expanded="true" signature="40725:40777" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SummaryAchievementTemplate.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/xml/AchievementFrame/templates/SummaryAchievementTemplate.xml">
+      <file leaf-file-name="AchievementTemplate.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/xml/AchievementFrame/templates/AchievementTemplate.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="1" column="4" lean-forward="true" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+            <state relative-caret-position="671">
+              <caret line="433" column="39" lean-forward="false" selection-start-line="433" selection-start-column="39" selection-end-line="433" selection-end-column="39" />
               <folding>
-                <element signature="n#Frame#0;n#Ui#0;n#!!top" expanded="false" />
-                <marker date="1499386546660" expanded="true" signature="5948:6030" ph="..." />
-                <marker date="1499386546660" expanded="true" signature="6061:6158" ph="..." />
-                <marker date="1499386546660" expanded="true" signature="6190:6281" ph="..." />
-                <marker date="1499386546660" expanded="true" signature="6313:6409" ph="..." />
+                <marker date="1499606443098" expanded="true" signature="12376:12441" ph="..." />
+                <marker date="1499606443098" expanded="true" signature="12472:12538" ph="..." />
+                <marker date="1499606443098" expanded="true" signature="12570:12626" ph="..." />
+                <marker date="1499606443098" expanded="true" signature="12658:12792" ph="..." />
+                <marker date="1499606443098" expanded="true" signature="20645:20726" ph="..." />
               </folding>
             </state>
           </provider>
@@ -117,8 +122,18 @@
       <file leaf-file-name="SummaryFrame.lua" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/core/Achievement/SummaryFrame.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="971">
-              <caret line="127" column="37" lean-forward="true" selection-start-line="127" selection-start-column="37" selection-end-line="127" selection-end-column="37" />
+            <state relative-caret-position="329">
+              <caret line="226" column="31" lean-forward="false" selection-start-line="226" selection-start-column="25" selection-end-line="226" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Filter.lua" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/core/Achievement/_future/Filter.lua">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="28" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -127,18 +142,8 @@
       <file leaf-file-name="AchievementFrame.lua" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/core/Achievement/AchievementFrame.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="359" column="88" lean-forward="false" selection-start-line="359" selection-start-column="88" selection-end-line="359" selection-end-column="88" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ComparisonPlayerTemplate.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/xml/AchievementFrame/templates/ComparisonPlayerTemplate.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="1" column="4" lean-forward="false" selection-start-line="1" selection-start-column="4" selection-end-line="216" selection-end-column="12" />
+            <state relative-caret-position="307">
+              <caret line="100" column="2" lean-forward="true" selection-start-line="100" selection-start-column="2" selection-end-line="100" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -155,36 +160,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>AC</find>
-      <find>ac</find>
-      <find>achieve</find>
-      <find>achievement</find>
-      <find>achievementList</find>
-      <find>m</find>
-      <find>miniTabl</find>
-      <find>miniTable</find>
-      <find>MINI</find>
-      <find>MIN</find>
-      <find>MI</find>
-      <find>M</find>
-      <find>mi</find>
-      <find>mini</find>
-      <find>miniT</find>
-      <find>miniTa</find>
-      <find>miniTab</find>
-      <find>p</find>
-      <find>progr</find>
-      <find>progres</find>
-      <find>progress</find>
-      <find>progressB</find>
-      <find>progressBa</find>
-      <find>progressBar</find>
-      <find>progressBarT</find>
-      <find>progressBarTa</find>
-      <find>progressBarTab</find>
       <find>updateTrackedAchievements</find>
-      <find>progressBarTable</find>
-      <find>criteriaTable</find>
+      <find>T</find>
+      <find>Trac</find>
+      <find>73</find>
+      <find>Track</find>
+      <find>u</find>
+      <find>update</find>
+      <find>updateFu</find>
+      <find>AchievementButton_ToggleTracking</find>
+      <find>updateFunc</find>
+      <find>AchievementFrameAchievements_Update</find>
+      <find>achievementFunctions</find>
+      <find>achievementFunctions =</find>
+      <find>achievementFunctions</find>
+      <find>ACHIEVEMENT_FUNCTIONS</find>
+      <find>achievementFunctions =</find>
+      <find>f</find>
+      <find>fileter</find>
+      <find>filete</find>
+      <find>filet</find>
+      <find>file</find>
+      <find>d</find>
+      <find>dropdown</find>
+      <find>filte</find>
+      <find>filt</find>
+      <find>fil</find>
+      <find>fi</find>
+      <find>filter</find>
+      <find>AchievementFrameBaseTab_OnClick</find>
+      <find>AchievementFrame_GetCategoryNumAchievements_All</find>
     </findStrings>
     <replaceStrings>
       <replace>getglobal(</replace>
@@ -198,7 +203,10 @@
     <dirStrings>
       <dir>C:\Users\thoma\Documents\Personal\World of Warcraft 1.12\Interface\AddOns\Achis\FrameXML</dir>
       <dir>C:\Users\thoma\Documents\Personal\World of Warcraft 1.12\Interface\AddOns\Achis</dir>
+      <dir>C:\Users\thoma\Documents\Personal\World of Warcraft 1.12\Interface\AddOns\Achievements\src\xml</dir>
       <dir>C:\Users\thoma\Documents\Personal\World of Warcraft 1.12\Interface\AddOns\Achievements</dir>
+      <dir>C:\Users\thoma\Documents\Personal\World of Warcraft 1.12\Interface\AddOns\Achievements\src\core\Achievement</dir>
+      <dir>C:\Users\thoma\Documents\Personal\World of Warcraft 1.12\Interface\AddOns\Achievements\src\xml\AchievementFrame</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -232,11 +240,9 @@
         <option value="$PROJECT_DIR$/src/xml/Achievement/ComparisonPlayerTemplate.xml" />
         <option value="$PROJECT_DIR$/src/xml/Achievement/SummaryAchievementTemplate.xml" />
         <option value="$PROJECT_DIR$/src/xml/AchievementFrame.xml" />
-        <option value="$PROJECT_DIR$/src/core/Achievement/AchievementFrameCategories.lua" />
         <option value="$PROJECT_DIR$/src/core/Achievement/AchievementCategoryButton.lua" />
         <option value="$PROJECT_DIR$/src/core/Achievement/AchievementIcon.lua" />
         <option value="$PROJECT_DIR$/src/core/Achievement/AchievementShield.lua" />
-        <option value="$PROJECT_DIR$/src/core/Controller/Category.lua" />
         <option value="$PROJECT_DIR$/src/core/Achievements.lua" />
         <option value="$PROJECT_DIR$/src/core/Tools/Debug.lua" />
         <option value="$PROJECT_DIR$/src/core/Achievement/future_implementations/StatsFrames.lua" />
@@ -245,13 +251,17 @@
         <option value="$PROJECT_DIR$/src/core/Achievement/future_implementations/Comparison.lua" />
         <option value="$PROJECT_DIR$/src/core/Achievement/AchievementComparisonPlayer.lua" />
         <option value="$PROJECT_DIR$/Achievements.toc" />
-        <option value="$PROJECT_DIR$/src/core/Achievement/SummaryFrame.lua" />
         <option value="$PROJECT_DIR$/src/xml/AchievementFrame/templates/SummaryAchievementTemplate.xml" />
         <option value="$PROJECT_DIR$/src/xml/AchievementFrame/templates/ComparisonPlayerTemplate.xml" />
+        <option value="$PROJECT_DIR$/src/core/Achievement/Globals.lua" />
+        <option value="$PROJECT_DIR$/src/core/Achievement/SummaryFrame.lua" />
+        <option value="$PROJECT_DIR$/src/xml/AchievementFrame/AchievementFrame.xml" />
+        <option value="$PROJECT_DIR$/src/core/Controller/Category.lua" />
+        <option value="$PROJECT_DIR$/src/xml/AchievementFrame/templates/AchievementTemplate.xml" />
         <option value="$PROJECT_DIR$/src/core/Achievement/AchievementFrameAchievements.lua" />
         <option value="$PROJECT_DIR$/src/core/Achievement/AchievementButton.lua" />
         <option value="$PROJECT_DIR$/src/core/Achievement/AchievementFrame.lua" />
-        <option value="$PROJECT_DIR$/src/core/Achievement/Globals.lua" />
+        <option value="$PROJECT_DIR$/src/core/Achievement/AchievementFrameCategories.lua" />
       </list>
     </option>
   </component>
@@ -294,6 +304,72 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Achievements" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Achievements" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Achievements" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="xml" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Achievements" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Achievements" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="xml" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AchievementFrame" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Achievements" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Achievements" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="xml" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AchievementFrame" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -356,7 +432,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="C:/Tauri Launcher/WotLK/Blizzard Interface Data (enGB)/FrameXML" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/thoma/Documents/Personal/World of Warcraft 1.12/Interface/AddOns/Achis/later.xml" />
@@ -483,12 +559,20 @@
       <workItem from="1499381758261" duration="29000" />
       <workItem from="1499382282721" duration="4955000" />
       <workItem from="1499418670312" duration="167000" />
-      <workItem from="1499602833144" duration="506000" />
+      <workItem from="1499602833144" duration="3645000" />
     </task>
+    <task id="LOCAL-00001" summary="Rename unsafe globals">
+      <created>1499603372035</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1499603372035</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28719000" />
+    <option name="totallyTimeSpent" value="31858000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -527,6 +611,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Rename unsafe globals" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rename unsafe globals" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -633,21 +721,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/xml/AchievementFrame/templates/AchievementTemplate.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/Controller/Category.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="22" column="14" lean-forward="true" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/wotlk/FrameXML/HybridScrollFrame.lua">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="410">
@@ -660,14 +733,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="2" column="3" lean-forward="true" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/Achievement/AchievementFrameCategories.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -691,14 +756,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5508">
           <caret line="204" column="0" lean-forward="true" selection-start-line="204" selection-start-column="0" selection-end-line="204" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/Achievement/_future/Filter.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1107">
-          <caret line="41" column="3" lean-forward="false" selection-start-line="41" selection-start-column="3" selection-end-line="41" selection-end-column="3" />
           <folding />
         </state>
       </provider>
@@ -744,41 +801,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/Achievement/AchievementFrameAchievements.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="68" column="0" lean-forward="true" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/core/GlobalStrings.lua">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="8" column="53" lean-forward="false" selection-start-line="8" selection-start-column="53" selection-end-line="8" selection-end-column="53" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xml/AchievementFrame/AchievementFrame.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="840" column="0" lean-forward="true" selection-start-line="840" selection-start-column="0" selection-end-line="840" selection-end-column="0" />
-          <folding>
-            <element signature="n#Frame#1;n#Ui#0;n#!!top" expanded="false" />
-            <marker date="1499383993875" expanded="true" signature="15796:15874" ph="..." />
-            <marker date="1499383993875" expanded="true" signature="15980:16076" ph="..." />
-            <marker date="1499383993875" expanded="true" signature="20244:20442" ph="..." />
-            <marker date="1499383993875" expanded="true" signature="20476:20560" ph="..." />
-            <marker date="1499383993875" expanded="true" signature="39252:39335" ph="..." />
-            <marker date="1499383993875" expanded="true" signature="39370:39552" ph="..." />
-            <marker date="1499383993875" expanded="true" signature="39587:39658" ph="..." />
-            <marker date="1499383993875" expanded="true" signature="40037:40372" ph="..." />
-            <marker date="1499383993875" expanded="true" signature="40062:40353" ph="comment" />
-            <marker date="1499383993875" expanded="true" signature="40467:40519" ph="..." />
-            <marker date="1499383993875" expanded="true" signature="40545:40597" ph="..." />
-            <marker date="1499383993875" expanded="true" signature="40623:40675" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -796,34 +823,103 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/Achievement/SummaryFrame.lua">
+    <entry file="file://$PROJECT_DIR$/src/core/Achievement/_future/Filter.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="971">
-          <caret line="127" column="37" lean-forward="true" selection-start-line="127" selection-start-column="37" selection-end-line="127" selection-end-column="37" />
+        <state relative-caret-position="0">
+          <caret line="0" column="28" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="28" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/Controller/Category.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="35" column="3" lean-forward="true" selection-start-line="35" selection-start-column="3" selection-end-line="35" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xml/AchievementFrame/templates/AchievementTemplate.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="671">
+          <caret line="433" column="39" lean-forward="false" selection-start-line="433" selection-start-column="39" selection-end-line="433" selection-end-column="39" />
+          <folding>
+            <marker date="1499606443098" expanded="true" signature="12376:12441" ph="..." />
+            <marker date="1499606443098" expanded="true" signature="12472:12538" ph="..." />
+            <marker date="1499606443098" expanded="true" signature="12570:12626" ph="..." />
+            <marker date="1499606443098" expanded="true" signature="12658:12792" ph="..." />
+            <marker date="1499606443098" expanded="true" signature="20645:20726" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/core/Achievement/AchievementButton.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="438" column="34" lean-forward="false" selection-start-line="438" selection-start-column="34" selection-end-line="438" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/Achievement/AchievementFrame.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="359" column="88" lean-forward="false" selection-start-line="359" selection-start-column="88" selection-end-line="359" selection-end-column="88" />
+        <state relative-caret-position="175">
+          <caret line="302" column="96" lean-forward="true" selection-start-line="302" selection-start-column="96" selection-end-line="302" selection-end-column="96" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/core/Achievement/Globals.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="98" column="8" lean-forward="false" selection-start-line="98" selection-start-column="8" selection-end-line="98" selection-end-column="8" />
+        <state relative-caret-position="791">
+          <caret line="78" column="20" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/Achievement/SummaryFrame.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="226" column="31" lean-forward="false" selection-start-line="226" selection-start-column="25" selection-end-line="226" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xml/AchievementFrame/AchievementFrame.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="605">
+          <caret line="471" column="37" lean-forward="true" selection-start-line="471" selection-start-column="37" selection-end-line="471" selection-end-column="37" />
+          <folding>
+            <marker date="1499604963181" expanded="true" signature="15796:15874" ph="..." />
+            <marker date="1499604963181" expanded="true" signature="15980:16076" ph="..." />
+            <marker date="1499604963181" expanded="true" signature="20096:20180" ph="..." />
+            <marker date="1499604963181" expanded="true" signature="20215:20311" ph="..." />
+            <marker date="1499604963181" expanded="true" signature="20346:20544" ph="..." />
+            <marker date="1499604963181" expanded="true" signature="20578:20662" ph="..." />
+            <marker date="1499604963181" expanded="true" signature="39354:39437" ph="..." />
+            <marker date="1499604963181" expanded="true" signature="39472:39654" ph="..." />
+            <marker date="1499604963181" expanded="true" signature="39689:39760" ph="..." />
+            <marker date="1499604963181" expanded="true" signature="40139:40474" ph="..." />
+            <marker date="1499604963181" expanded="true" signature="40164:40455" ph="comment" />
+            <marker date="1499604963181" expanded="true" signature="40569:40621" ph="..." />
+            <marker date="1499604963181" expanded="true" signature="40647:40699" ph="..." />
+            <marker date="1499604963181" expanded="true" signature="40725:40777" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/Achievement/AchievementFrame.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="100" column="2" lean-forward="true" selection-start-line="100" selection-start-column="2" selection-end-line="100" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/Achievement/AchievementFrameAchievements.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="666">
+          <caret line="166" column="35" lean-forward="false" selection-start-line="166" selection-start-column="35" selection-end-line="166" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/Achievement/AchievementFrameCategories.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="353" column="4" lean-forward="false" selection-start-line="353" selection-start-column="4" selection-end-line="353" selection-end-column="4" />
           <folding />
         </state>
       </provider>

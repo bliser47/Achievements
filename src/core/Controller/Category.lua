@@ -30,3 +30,31 @@ end
 function GetNumCompletedAchievements()
     return 1,0;
 end
+
+function GetNextAchievement(id)
+    return nil;
+end
+
+function GetPreviousAchievement(id)
+    return nil;
+end
+
+function GetAchievementCategory(id)
+    return 0;
+end
+
+function GetTrackedAchievements()
+    return {};
+end
+
+function GetAchievementNumCriteria(id)
+    return 0;
+end
+
+function IsTrackedAchievement(id)
+    return false;
+end
+
+function GetNumTrackedAchievements()
+    return 0;
+end

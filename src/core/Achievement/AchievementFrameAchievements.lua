@@ -9,22 +9,24 @@ end
 
 
 function AchievementFrameAchievements_OnLoad (self)
-    AchievementFrameAchievementsContainerScrollBar.Show =
-    function (self)
+
+    local oldAchievementFrameAchievementsContainerScrollBarShow = AchievementFrameAchievementsContainerScrollBar.Show;
+    AchievementFrameAchievementsContainerScrollBar.Show = function (self)
         AchievementFrameAchievements:SetWidth(504);
         for _, button in next, AchievementFrameAchievements.buttons do
             button:SetWidth(496);
         end
-        getmetatable(self).__index.Show(self);
+        oldAchievementFrameAchievementsContainerScrollBarShow(self);
     end
 
+    local oldAchievementFrameAchievementsContainerScrollBar = AchievementFrameAchievementsContainerScrollBar.Hide;
     AchievementFrameAchievementsContainerScrollBar.Hide =
     function (self)
         AchievementFrameAchievements:SetWidth(530);
         for _, button in next, AchievementFrameAchievements.buttons do
             button:SetWidth(522);
         end
-        getmetatable(self).__index.Hide(self);
+        oldAchievementFrameAchievementsContainerScrollBar(self);
     end
 
     self:RegisterEvent("ADDON_LOADED");
@@ -70,9 +72,11 @@ function AchievementFrameAchievements_OnEvent (self, event, params)
         updateTrackedAchievements(GetTrackedAchievements());
     end
 
+    --[[ TODO: Figure out what this is
     if ( not AchievementMicroButton:IsShown() ) then
         AchievementMicroButton_Update();
     end
+    --]]
 end
 
 function AchievementFrameAchievementsBackdrop_OnLoad (self)
@@ -89,7 +93,8 @@ function AchievementFrameAchievements_Update ()
 
     local offset = HybridScrollFrame_GetOffset(scrollFrame);
     local buttons = scrollFrame.buttons;
-    local numAchievements, numCompleted, completedOffset = ACHIEVEMENTUI_SELECTEDFILTER(category);
+    -- TODO: When filters get added replace the bottom function with ACHIEVEMENTUI_SELECTEDFILTER
+    local numAchievements, numCompleted, completedOffset = AchievementFrame_GetCategoryNumAchievements_All(category);
     local numButtons = table.getn(buttons);
 
     -- If the current category is feats of strength and there are no entries then show the explanation text
@@ -153,13 +158,17 @@ function AchievementFrameAchievements_ClearSelection ()
     AchievementButton_ResetObjectives();
     for _, button in next, AchievementFrameAchievements.buttons do
         button:Collapse();
+        --[[ TODO: Support mouse over
         if ( not button:IsMouseOver() ) then
             button.highlight:Hide();
         end
+        --]]
         button.selected = nil;
+        --[[ TODO: Support tracking
         if ( not button.tracked:GetChecked() ) then
             button.tracked:Hide();
         end
+        ]]--
         button.description:Show();
         button.hiddenDescription:Hide();
     end

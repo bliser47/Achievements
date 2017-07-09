@@ -352,7 +352,10 @@ function AchievementFrameCategories_SelectButton (button)
         achievementFunctions.clearFunc();
     end
 
-    achievementFunctions.updateFunc();
+    -- TODO: Sometimes updateFunc is undefined here
+    if ( achievementFunctions.updateFunc ) then
+        achievementFunctions.updateFunc();
+    end
 end
 
 function AchievementFrameAchievements_OnShow()

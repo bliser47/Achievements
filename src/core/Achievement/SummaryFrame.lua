@@ -223,11 +223,14 @@ function AchievementFrame_SelectAchievement(id, forceSelect)
     end
 
     local _, _, _, achCompleted = GetAchievementInfo(id);
+
+    --[[ TODO: Implement filters
     if ( achCompleted and (ACHIEVEMENTUI_SELECTEDFILTER == AchievementFrameFilters[ACHIEVEMENT_FILTER_INCOMPLETE].func) ) then
         AchievementFrame_SetFilter(ACHIEVEMENT_FILTER_ALL);
     elseif ( (not achCompleted) and (ACHIEVEMENTUI_SELECTEDFILTER == AchievementFrameFilters[ACHIEVEMENT_FILTER_COMPLETE].func) ) then
         AchievementFrame_SetFilter(ACHIEVEMENT_FILTER_ALL);
     end
+    ]]--
 
     AchievementFrameTab_OnClick = AchievementFrameBaseTab_OnClick;
     AchievementFrameTab_OnClick(1);

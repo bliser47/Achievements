@@ -44,12 +44,14 @@ function AchievementButton_Collapse (self)
     self.collapsed = true;
     AchievementButton_UpdatePlusMinusTexture(self);
     self:SetHeight(ACHIEVEMENTBUTTON_COLLAPSEDHEIGHT);
-    _G[self:GetName() .. "Background"]:SetTexCoord(0, 1, 1-(ACHIEVEMENTBUTTON_COLLAPSEDHEIGHT / 256), 1);
-    _G[self:GetName() .. "Glow"]:SetTexCoord(0, 1, 0, ACHIEVEMENTBUTTON_COLLAPSEDHEIGHT / 128);
+    getglobal(self:GetName() .. "Background"):SetTexCoord(0, 1, 1-(ACHIEVEMENTBUTTON_COLLAPSEDHEIGHT / 256), 1);
+    getglobal(self:GetName() .. "Glow"):SetTexCoord(0, 1, 0, ACHIEVEMENTBUTTON_COLLAPSEDHEIGHT / 128);
 
+    --[[ TODO: Support tracking
     if ( not self.tracked:GetChecked() ) then
         self.tracked:Hide();
     end
+    ]]--
 end
 
 function AchievementButton_Expand (self, height)
@@ -60,16 +62,16 @@ function AchievementButton_Expand (self, height)
     self.collapsed = nil;
     AchievementButton_UpdatePlusMinusTexture(self);
     self:SetHeight(height);
-    _G[self:GetName() .. "Background"]:SetTexCoord(0, 1, max(0, 1-(height / 256)), 1);
-    _G[self:GetName() .. "Glow"]:SetTexCoord(0, 1, 0, (height+5) / 128);
+    getglobal(self:GetName() .. "Background"):SetTexCoord(0, 1, max(0, 1-(height / 256)), 1);
+    getglobal(self:GetName() .. "Glow"):SetTexCoord(0, 1, 0, (height+5) / 128);
 end
 
 function AchievementButton_Saturate (self)
     local name = self:GetName();
     self.saturated = true;
-    _G[name .. "TitleBackground"]:SetTexCoord(0, 0.9765625, 0, 0.3125);
-    _G[name .. "Background"]:SetTexture("Interface\\AchievementFrame\\UI-Achievement-Parchment-Horizontal");
-    _G[name .. "Glow"]:SetVertexColor(1.0, 1.0, 1.0);
+    getglobal(name .. "TitleBackground"):SetTexCoord(0, 0.9765625, 0, 0.3125);
+    getglobal(name .. "Background"):SetTexture("Interface\\AchievementFrame\\UI-Achievement-Parchment-Horizontal");
+    getglobal(name .. "Glow"):SetVertexColor(1.0, 1.0, 1.0);
     self.icon:Saturate();
     self.shield:Saturate();
     self.shield.points:SetVertexColor(1, 1, 1);
@@ -84,9 +86,9 @@ end
 function AchievementButton_Desaturate (self)
     local name = self:GetName();
     self.saturated = nil;
-    _G[name .. "TitleBackground"]:SetTexCoord(0, 0.9765625, 0.34375, 0.65625);
-    _G[name .. "Background"]:SetTexture("Interface\\AchievementFrame\\UI-Achievement-Parchment-Horizontal-Desaturated");
-    _G[name .. "Glow"]:SetVertexColor(.22, .17, .13);
+    getglobal(name .. "TitleBackground"):SetTexCoord(0, 0.9765625, 0.34375, 0.65625);
+    getglobal(name .. "Background"):SetTexture("Interface\\AchievementFrame\\UI-Achievement-Parchment-Horizontal-Desaturated");
+    getglobal(name .. "Glow"):SetVertexColor(.22, .17, .13);
     self.icon:Desaturate();
     self.shield:Desaturate();
     self.shield.points:SetVertexColor(.65, .65, .65);
@@ -100,19 +102,19 @@ end
 
 function AchievementButton_OnLoad (self)
     local name = self:GetName();
-    self.label = _G[name .. "Label"];
-    self.description = _G[name .. "Description"];
-    self.hiddenDescription = _G[name .. "HiddenDescription"];
-    self.reward = _G[name .. "Reward"];
-    self.rewardBackground = _G[name.."RewardBackground"];
-    self.icon = _G[name .. "Icon"];
-    self.shield = _G[name .. "Shield"];
-    self.objectives = _G[name .. "Objectives"];
-    self.highlight = _G[name .. "Highlight"];
-    self.dateCompleted = _G[name .. "DateCompleted"]
-    self.tracked = _G[name .. "Tracked"];
-    self.check = _G[name .. "Check"];
-    self.plusMinus = _G[name .. "PlusMinus"];
+    self.label = getglobal(name .. "Label");
+    self.description = getglobal(name .. "Description");
+    self.hiddenDescription = getglobal(name .. "HiddenDescription");
+    self.reward = getglobal(name .. "Reward");
+    self.rewardBackground = getglobal(name.."RewardBackground");
+    self.icon = getglobal(name .. "Icon");
+    self.shield = getglobal(name .. "Shield");
+    self.objectives = getglobal(name .. "Objectives");
+    self.highlight = getglobal(name .. "Highlight");
+    self.dateCompleted = getglobal(name .. "DateCompleted");
+    self.tracked = getglobal(name .. "Tracked");
+    self.check = getglobal(name .. "Check");
+    self.plusMinus = getglobal(name .. "PlusMinus");
 
     self.dateCompleted:ClearAllPoints();
     self.dateCompleted:SetPoint("TOP", self.shield, "BOTTOM", -3, 6);
@@ -138,7 +140,21 @@ function AchievementButton_OnLoad (self)
 end
 
 function AchievementButton_OnClick (self, ignoreModifiers)
-    if(IsModifiedClick() and not ignoreModifiers) then
+
+    -- Modified blizzard code here so that it supports both Vanilla & TBC
+    -- TODO: Needs proper coding
+    --[[
+    local keyDown = false;
+    if IsAutoLootKeyDown then
+        keyDown = IsAutoLootKeyDown();
+    elseif  IsAutoLootKeyDown then
+        keyDown = IsAutoLootKeyDown();
+    else
+        keyDown = IsModifiedClick();
+    end
+
+
+    if(keyDown and not ignoreModifiers) then
         if ( IsModifiedClick("CHATLINK") and ChatEdit_GetActiveWindow() ) then
             local achievementLink = GetAchievementLink(self.id);
             if ( achievementLink ) then
@@ -150,11 +166,14 @@ function AchievementButton_OnClick (self, ignoreModifiers)
 
         return;
     end
+    ]]--
 
     if ( self.selected ) then
+        --[[ TODO: Support IsMouseOver
         if ( not self:IsMouseOver() ) then
             self.highlight:Hide();
         end
+        ]]--
         AchievementFrameAchievements_ClearSelection()
         HybridScrollFrame_CollapseButton(AchievementFrameAchievementsContainer);
         AchievementFrameAchievements_Update();
@@ -258,6 +277,7 @@ function AchievementButton_DisplayAchievement (button, category, achievement, se
             end
         end
 
+        --[[ TODO: Support tracking
         if ( IsTrackedAchievement(id) ) then
             button.check:Show();
             button.label:SetWidth(button.label:GetStringWidth() + 4); -- This +4 here is to fudge around any string width issues that arize from resizing a string set to its string width. See bug 144418 for an example.
@@ -268,6 +288,7 @@ function AchievementButton_DisplayAchievement (button, category, achievement, se
             button.tracked:SetChecked(false);
             button.tracked:Hide();
         end
+        ]]--
 
         AchievementButton_UpdatePlusMinusTexture(button);
     end
@@ -285,9 +306,11 @@ function AchievementButton_DisplayAchievement (button, category, achievement, se
         else
             button:Expand(height);
         end
+        --[[ TODO: Support tracking
         if ( not completed ) then
             button.tracked:Show();
         end
+        ]]--
     elseif ( button.selected ) then
         button.selected = nil;
         if ( not button:IsMouseOver() ) then
@@ -382,7 +405,7 @@ function AchievementShield_SetPoints(points, pointString, normalFont, smallFont)
     else
         pointString:SetFontObject(smallFont);
     end
-    pointString:SetText(points);
+    --pointString:SetText(points);
 end
 
 function AchievementButton_ResetTable (t)
