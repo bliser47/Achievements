@@ -1,60 +1,28 @@
 function GetCategoryList()
-    return {0};
+    local categoryList = {};
+    for categoryId,_ in pairs(Achievements.categories) do
+       table.insert(categoryList,categoryId);
+    end
+    return categoryList;
 end
 
 
 function GetCategoryInfo(id)
-    if id == 92 then
-        return "General",-1,0;
+    if Achievements.categories[id] then
+        return Achievements.categories[id].name, Achievements.categories[id].parent, 0;
     end
-    return "Unused",-1,0;
 end
 
 
-function GetAchievementInfo(id)
-    return id, "Sneaky", 10, false, nil, nil, nil, "Pick pickot a mob", nill, "Interface\\Icons\\ability_stealth"
-end
-
-function GetTotalAchievementPoints()
-    return 0;
-end
-
-function GetLatestCompletedAchievements()
-    return {};
-end
-
-function GetCategoryNumAchievements(category)
-    return 1,0;
-end
-
-function GetNumCompletedAchievements()
-    return 1,0;
-end
-
-function GetNextAchievement(id)
-    return nil;
-end
-
-function GetPreviousAchievement(id)
-    return nil;
-end
-
-function GetAchievementCategory(id)
-    return 0;
-end
-
-function GetTrackedAchievements()
-    return {};
-end
-
-function GetAchievementNumCriteria(id)
-    return 0;
-end
-
-function IsTrackedAchievement(id)
-    return false;
-end
-
-function GetNumTrackedAchievements()
-    return 0;
+function GetCategoryNumAchievements(id)
+    local num, total = 0, 0;
+    if Achievements.categories[id] then
+        for _,achievementId in pairs(Achievements.categories[id].achievementIds) do
+            if Achievements.achievements[achievementId].complete then
+                num = num + 1
+            end
+            total = total + 1
+        end
+    end
+    return total, num;
 end

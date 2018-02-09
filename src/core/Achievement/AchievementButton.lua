@@ -70,7 +70,7 @@ function AchievementButton_Saturate (self)
     local name = self:GetName();
     self.saturated = true;
     getglobal(name .. "TitleBackground"):SetTexCoord(0, 0.9765625, 0, 0.3125);
-    getglobal(name .. "Background"):SetTexture("Interface\\AchievementFrame\\UI-Achievement-Parchment-Horizontal");
+    getglobal(name .. "Background"):SetTexture("Interface\\AddOns\\Achievements\\src\\wotlk\\Textures\\UI-Achievement-Parchment-Horizontal");
     getglobal(name .. "Glow"):SetVertexColor(1.0, 1.0, 1.0);
     self.icon:Saturate();
     self.shield:Saturate();
@@ -87,7 +87,7 @@ function AchievementButton_Desaturate (self)
     local name = self:GetName();
     self.saturated = nil;
     getglobal(name .. "TitleBackground"):SetTexCoord(0, 0.9765625, 0.34375, 0.65625);
-    getglobal(name .. "Background"):SetTexture("Interface\\AchievementFrame\\UI-Achievement-Parchment-Horizontal-Desaturated");
+    getglobal(name .. "Background"):SetTexture("Interface\\AddOns\\Achievements\\src\\wotlk\\Textures\\UI-Achievement-Parchment-Horizontal-Desaturated");
     getglobal(name .. "Glow"):SetVertexColor(.22, .17, .13);
     self.icon:Desaturate();
     self.shield:Desaturate();
@@ -236,9 +236,9 @@ function AchievementButton_DisplayAchievement (button, category, achievement, se
 
         if ( GetPreviousAchievement(id) ) then
             -- If this is a progressive achievement, show the total score.
-            AchievementShield_SetPoints(AchievementButton_GetProgressivePoints(id), button.shield.points, AchievementPointsFont, AchievementPointsFontSmall);
+            AchievementShield_SetPoints(AchievementButton_GetProgressivePoints(id), button.shield.points, GameFontNormal, GameFontNormalSmall);
         else
-            AchievementShield_SetPoints(points, button.shield.points, AchievementPointsFont, AchievementPointsFontSmall);
+            AchievementShield_SetPoints(points, button.shield.points, GameFontNormal, GameFontNormalSmall);
         end
 
         if ( points > 0 ) then
@@ -405,7 +405,7 @@ function AchievementShield_SetPoints(points, pointString, normalFont, smallFont)
     else
         pointString:SetFontObject(smallFont);
     end
-    --pointString:SetText(points);
+    pointString:SetText(points);
 end
 
 function AchievementButton_ResetTable (t)

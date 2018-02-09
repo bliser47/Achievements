@@ -89,7 +89,7 @@ function AchievementFrameAchievements_Update ()
     if ( category == "summary" ) then
         return;
     end
-    local scrollFrame = AchievementFrameAchievementsContainer
+    local scrollFrame = AchievementFrameAchievementsContainer;
 
     local offset = HybridScrollFrame_GetOffset(scrollFrame);
     local buttons = scrollFrame.buttons;

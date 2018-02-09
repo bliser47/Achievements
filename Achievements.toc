@@ -2,6 +2,7 @@
 ## Version: 0.1
 ## Author: Bliser
 
+src\core\Core.lua
 src\core\GlobalStrings.lua
 
 src\xml\Font\Fonts.xml
@@ -15,6 +16,11 @@ src\wotlk\FrameXML\HybridScrollFrame.xml
 src\core\Tools\Debug.lua
 
 src\core\Controller\Category.lua
+src\core\Controller\Achievement.lua
+src\core\Controller\Summary.lua
+src\core\Controller\Tracking.lua
+
+src\achievements\general\levels.lua
 
 src\core\Achievement\Globals.lua
 src\core\Achievement\AchievementFrameCategories.lua

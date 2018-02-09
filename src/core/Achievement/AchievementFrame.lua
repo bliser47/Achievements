@@ -81,7 +81,7 @@ function AchievementFrameBaseTab_OnClick (id)
         else
             AchievementFrame_ShowSubFrame(AchievementFrameAchievements);
         end
-        AchievementFrameWaterMark:SetTexture("Interface\\AchievementFrame\\UI-Achievement-AchievementWatermark");
+        AchievementFrameWaterMark:SetTexture("Interface\\AddOns\\Achievements\\src\\wotlk\\Textures\\UI-Achievement-AchievementWatermark");
     else
         print('changing to stats');
         achievementFunctions = STAT_FUNCTIONS;
@@ -93,7 +93,7 @@ function AchievementFrameBaseTab_OnClick (id)
         else
             AchievementFrame_ShowSubFrame(AchievementFrameStats);
         end
-        AchievementFrameWaterMark:SetTexture("Interface\\AchievementFrame\\UI-Achievement-StatWatermark");
+        AchievementFrameWaterMark:SetTexture("Interface\\AddOns\\Achievements\\src\\wotlk\\Textures\\UI-Achievement-StatWatermark");
     end
 
     AchievementFrameCategories_Update();
@@ -111,12 +111,12 @@ function AchievementFrameComparisonTab_OnClick (id)
         print('changing to comparison');
         achievementFunctions = COMPARISON_ACHIEVEMENT_FUNCTIONS;
         AchievementFrame_ShowSubFrame(AchievementFrameComparison, AchievementFrameComparisonContainer);
-        AchievementFrameWaterMark:SetTexture("Interface\\AchievementFrame\\UI-Achievement-AchievementWatermark");
+        AchievementFrameWaterMark:SetTexture("Interface\\AddOns\\Achievements\\src\\wotlk\\Textures\\UI-Achievement-AchievementWatermark");
     else
         print('changing to comparison stat');
         achievementFunctions = COMPARISON_STAT_FUNCTIONS;
         AchievementFrame_ShowSubFrame(AchievementFrameComparison, AchievementFrameComparisonStatsContainer);
-        AchievementFrameWaterMark:SetTexture("Interface\\AchievementFrame\\UI-Achievement-StatWatermark");
+        AchievementFrameWaterMark:SetTexture("Interface\\AddOns\\Achievements\\src\\wotlk\\Textures\\UI-Achievement-StatWatermark");
     end
 
     AchievementFrameCategories_GetCategoryList(ACHIEVEMENTUI_CATEGORIES);
