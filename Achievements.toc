@@ -1,8 +1,15 @@
 ## Title: Achievements
+## SavedVariables: AchievementsDB
 ## Version: 0.1
 ## Author: Bliser
 
+Achievements.lua
+
 src\core\Core.lua
+
+src\core\Event\EventHandler.lua
+src\core\Event\EventListener.lua
+
 src\core\GlobalStrings.lua
 
 src\xml\Font\Fonts.xml

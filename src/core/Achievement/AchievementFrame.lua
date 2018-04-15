@@ -37,6 +37,7 @@ function AchievementFrame_OnLoad (self)
     --PanelTemplates_SetNumTabs(self, 2);
     --self.selectedTab = 1;
     --PanelTemplates_UpdateTabs(self);
+    Achievements_OnLoad();
 end
 
 function AchievementFrame_OnShow (self)
