@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7352167a-38e8-4bbc-83e9-3227d45b3bf6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/core/Controller/Model.lua" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Achievements.lua" afterPath="$PROJECT_DIR$/Achievements.lua" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Achievements.toc" afterPath="$PROJECT_DIR$/Achievements.toc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/achievements/general/levels.lua" afterPath="$PROJECT_DIR$/src/achievements/general/levels.lua" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/Achievement/AchievementFrame.lua" afterPath="$PROJECT_DIR$/src/core/Achievement/AchievementFrame.lua" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/Achievement/SummaryFrame.lua" afterPath="$PROJECT_DIR$/src/core/Achievement/SummaryFrame.lua" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/Controller/Summary.lua" afterPath="$PROJECT_DIR$/src/core/Controller/Summary.lua" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/Core.lua" afterPath="$PROJECT_DIR$/src/core/Core.lua" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/Event/EventListener.lua" afterPath="$PROJECT_DIR$/src/core/Event/EventListener.lua" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/Tools/Debug.lua" afterPath="$PROJECT_DIR$/src/core/Tools/Debug.lua" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -525,7 +515,7 @@
       <workItem from="1523810783624" duration="4866000" />
       <workItem from="1523815945884" duration="23000" />
       <workItem from="1523952769881" duration="11000" />
-      <workItem from="1524088571711" duration="5443000" />
+      <workItem from="1524088571711" duration="5512000" />
     </task>
     <task id="LOCAL-00001" summary="Rename unsafe globals">
       <created>1499603372035</created>
@@ -541,11 +531,18 @@
       <option name="project" value="LOCAL" />
       <updated>1499607158998</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added Model (name based, GUID doesn't exist in Vanilla)&#10;Reworked debug&#10;Added arg param to AddListenerOnce&#10;Added singularEvents feature to criterias&#10;Loads of other changes">
+      <created>1524094080763</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1524094080764</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54738000" />
+    <option name="totallyTimeSpent" value="54807000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -607,7 +604,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Rename unsafe globals" />
     <MESSAGE value="Selecting achievement now works (fix display)&#10;Removed tracking (don't want to mess with watch frame for now)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Selecting achievement now works (fix display)&#10;Removed tracking (don't want to mess with watch frame for now)" />
+    <MESSAGE value="Added Model (name based, GUID doesn't exist in Vanilla)&#10;Reworked debug&#10;Added arg param to AddListenerOnce&#10;Added singularEvents feature to criterias&#10;Loads of other changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Model (name based, GUID doesn't exist in Vanilla)&#10;Reworked debug&#10;Added arg param to AddListenerOnce&#10;Added singularEvents feature to criterias&#10;Loads of other changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
