@@ -1,3 +1,5 @@
+SHORTDATE = "%2$d/%1$02d/%3$02d";
+
 Achievements.categories = {};
 Achievements.achievements = {};
 
@@ -7,7 +9,9 @@ Achievements.addAchievement = function(achievement)
     if achievement.category then
         table.insert(Achievements.categories[achievement.category].achievementIds,achievementId);
     end
-    achievement.complete = false;
+    if Achievements.isAchievementComplete(achievement) then
+        achievement.complete = Achievements.getAchievementCompleteDate(achievement);
+    end
     achievement.criterias = achievement.criterias or {};
     return achievementId;
 end
@@ -25,12 +29,10 @@ end
 
 Achievements.loadAchievement = function(achievement)
     Achievements.Debug("Loading achievement: " .. achievement.name);
-    for _, criteria in ipairs(achievement.criterias) do
-        criteria.parent = achievement;
-        if not AchievementsDB.char.achievements[achievement.key] then
+    if not achievement.complete then
+        for _, criteria in ipairs(achievement.criterias) do
+            criteria.parent = achievement;
             Achievements.loadCriteria(criteria);
-        else
-            criteria.complete = true;
         end
     end
 end
@@ -38,17 +40,18 @@ end
 
 Achievements.loadCriteria = function(criteria)
     Achievements.Debug("Loading criteria " .. criteria.key);
-    if not AchievementsDB.char.criterias[criteria.key] then
+    if not criteria.complete then
         for _, event in ipairs(criteria.events) do
             Achievements.loadEvent(event,criteria);
         end
-    else
-        criteria.complete = true;
+        for _, event in ipairs(criteria.singleEvents) do
+            Achievements.loadEvent(event,criteria,1);
+        end
     end
 end
 
 
-Achievements.loadEvent = function(event, criteria)
+Achievements.loadEvent = function(event, criteria, listenCount)
     Achievements.Debug("Loading event: " .. event);
     criteria.listeners = criteria.listeners or {};
     table.insert(criteria.listeners, Achievements.AddListener(event, function(listener, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12)
@@ -61,14 +64,14 @@ Achievements.loadEvent = function(event, criteria)
     end, {
         criteria = criteria,
         self = Achievements
-    }));
+    },listenCount));
 end
 
 
 Achievements.completeCriteria = function(criteria)
     Achievements.Debug("Completing criteria: " .. criteria.key);
     criteria.complete = true;
-    AchievementsDB.char.criterias[criteria.key] = time();
+    Achievements.saveCriteria(criteria);
     if criteria.listeners then
         for _, listener in ipairs(criteria.listeners) do
             Achievements.RemoveListener(listener, "criteria complete: " .. criteria.key );
@@ -90,7 +93,7 @@ Achievements.checkAchievementComplete = function(achievement)
         totalCriterias = totalCriterias + 1;
     end
     local requiredCriterias = achievement.required or totalCriterias;
-    if completeCriterias >= requiredCriterias then
+    if requiredCriterias > 0 and completeCriterias >= requiredCriterias then
         Achievements.completeAchievement(achievement);
     end
 end
@@ -98,32 +101,18 @@ end
 
 Achievements.completeAchievement = function(achievement, onLoad)
     if achievement.previous then
-        Achievements.CompleteAchievement(GetPreviousAchievement(achievement.id,nil,onLoad));
+        Achievements.completeAchievement(GetPreviousAchievement(achievement.id,nil,onLoad));
     end
-
-    achievement.complete = true;
-
-    AchievementsDB.char.achievements[achievement.key] = time();
+    Achievements.saveAchievement(achievement)
+    achievement.complete = Achievements.getAchievementCompleteDate(achievement);
     Achievements.Debug("Completing achievement: " .. achievement.name)
     Achievements.OnEvent("ACHIEVEMENT_BOOK_ACHIEVEMENT_COMPLETE",achievement);
 end
 
 
-Achievements.Debug = function(obj)
-    if Achievements.isDebug then
-        DEFAULT_CHAT_FRAME:AddMessage(obj);
-    end
-end
-
 Achievements.InitializeCore = function()
     ACHIEVEMENT_CATEGORY_GENERAL = Achievements.addCategory("General");
     Achievements.Debug("Initializing core");
-
-    AchievementsDB = AchievementsDB or {};
-    AchievementsDB.char = AchievementsDB.char or {};
-    AchievementsDB.char.achievements = AchievementsDB.char.achievements or {};
-    AchievementsDB.char.criterias = AchievementsDB.char.criterias or {};
-
     if Achievements.achievements then
         for _, achievement in pairs(Achievements.achievements) do
             Achievements.loadAchievement(achievement);

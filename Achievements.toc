@@ -22,6 +22,7 @@ src\wotlk\FrameXML\HybridScrollFrame.xml
 
 src\core\Tools\Debug.lua
 
+src\core\Controller\Model.lua
 src\core\Controller\Category.lua
 src\core\Controller\Achievement.lua
 src\core\Controller\Summary.lua

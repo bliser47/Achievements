@@ -8,6 +8,8 @@ function Achievements_OnLoad()
     Achievements.InitializeEventListener()
     Achievements.AddListenerOnce("ADDON_LOADED",function(_, name)
         if name == "Achievements" then
+            Achievements.InitializeModel();
+            Achievements.InitializeAchievements();
             Achievements.InitializeCore();
         end
     end)

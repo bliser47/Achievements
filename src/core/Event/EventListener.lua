@@ -30,8 +30,8 @@ end
 	@param {Function} callback
 	@return {Object}
 ]]--
-function Achievements.AddListenerOnce(event, callback)
-	return Achievements.AddListener(event, callback, null, 1);
+function Achievements.AddListenerOnce(event, callback, arg)
+	return Achievements.AddListener(event, callback, arg, 1);
 end
 
 

@@ -60,6 +60,7 @@ function AchievementFrameSummary_UpdateAchievements(latestAchievement)
             button.id = id;
 
             if ( completed ) then
+                Achievements.Debug({day,month,year});
                 button.dateCompleted:SetText(string.format(SHORTDATE, day, month, year));
             else
                 button.dateCompleted:SetText("");

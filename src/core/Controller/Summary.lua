@@ -3,10 +3,13 @@ function GetTotalAchievementPoints()
 end
 
 function GetLatestCompletedAchievements()
-    local latestCompletedAchievementIds = {}
-
-    --table.sort(latestCompletedAchievementIds,TA.SortAchievements);
-    return latestCompletedAchievementIds;
+    local achievementList = {}
+    for id,achievement in pairs(Achievements.achievements) do
+        if achievement.complete then
+            table.insert(achievementList,id)
+        end
+    end
+    return achievementList
 end
 
 

@@ -73,7 +73,6 @@ function AchievementFrameBaseTab_OnClick (id)
 
     local isSummary = false
     if ( id == 1 ) then
-        print('changing to base');
         achievementFunctions = ACHIEVEMENT_FUNCTIONS;
         AchievementFrameCategories_GetCategoryList(ACHIEVEMENTUI_CATEGORIES); -- This needs to happen before AchievementFrame_ShowSubFrame (fix for bug 157885)
         if ( achievementFunctions.selectedCategory == "summary" ) then
@@ -84,7 +83,6 @@ function AchievementFrameBaseTab_OnClick (id)
         end
         AchievementFrameWaterMark:SetTexture("Interface\\AddOns\\Achievements\\src\\wotlk\\Textures\\UI-Achievement-AchievementWatermark");
     else
-        print('changing to stats');
         achievementFunctions = STAT_FUNCTIONS;
         AchievementFrameCategories_GetCategoryList(ACHIEVEMENTUI_CATEGORIES);
         if ( achievementFunctions.selectedCategory == "summary" ) then
@@ -109,12 +107,10 @@ AchievementFrameTab_OnClick = AchievementFrameBaseTab_OnClick;
 
 function AchievementFrameComparisonTab_OnClick (id)
     if ( id == 1 ) then
-        print('changing to comparison');
         achievementFunctions = COMPARISON_ACHIEVEMENT_FUNCTIONS;
         AchievementFrame_ShowSubFrame(AchievementFrameComparison, AchievementFrameComparisonContainer);
         AchievementFrameWaterMark:SetTexture("Interface\\AddOns\\Achievements\\src\\wotlk\\Textures\\UI-Achievement-AchievementWatermark");
     else
-        print('changing to comparison stat');
         achievementFunctions = COMPARISON_STAT_FUNCTIONS;
         AchievementFrame_ShowSubFrame(AchievementFrameComparison, AchievementFrameComparisonStatsContainer);
         AchievementFrameWaterMark:SetTexture("Interface\\AddOns\\Achievements\\src\\wotlk\\Textures\\UI-Achievement-StatWatermark");
