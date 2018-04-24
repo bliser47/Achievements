@@ -22,15 +22,16 @@ src\wotlk\FrameXML\HybridScrollFrame.xml
 
 src\core\Tools\Debug.lua
 
+src\core\Controller\Localization.lua
 src\core\Controller\Model.lua
 src\core\Controller\Category.lua
+src\core\Controller\Criteria.lua
 src\core\Controller\Achievement.lua
 src\core\Controller\Summary.lua
 src\core\Controller\Tracking.lua
 
 src\achievements\general\levels.lua
 
-src\core\Achievement\Globals.lua
 src\core\Achievement\AchievementFrameCategories.lua
 src\core\Achievement\AchievementCategoryButton.lua
 src\core\Achievement\AchievementFrameAchievements.lua
@@ -40,6 +41,7 @@ src\core\Achievement\AchievementButton.lua
 src\core\Achievement\SummaryFrame.lua
 src\core\Achievement\AchievementComparisonPlayerButton.lua
 src\core\Achievement\AchievementFrame.lua
+src\core\Achievement\Globals.lua
 
 src\xml\AchievementFrame\templates\AchievementFrameSummaryCategoryTemplate.xml
 src\xml\AchievementFrame\templates\AchievementCheckButtonTemplate.xml

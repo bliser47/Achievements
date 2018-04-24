@@ -45,7 +45,7 @@ function AchievementFrame_OnShow (self)
     AchievementFrameHeaderPoints:SetText(GetTotalAchievementPoints());
     if ( not AchievementFrame.wasShown ) then
         AchievementFrame.wasShown = true;
-        AchievementCategoryButton_OnClick(AchievementFrameCategoriesContainerButton1);
+        --AchievementCategoryButton_OnClick(AchievementFrameCategoriesContainerButton1);
     end
     UpdateMicroButtons();
     AchievementFrame_LoadTextures();
@@ -215,6 +215,8 @@ function AchievementObjectives_DisplayCriteria (objectivesFrame, id)
     if ( not id ) then
         return;
     end
+
+    Achievements.Debug("AchievementObjectives_DisplayCriteria " .. id);
 
     local ACHIEVEMENTMODE_CRITERIA = 1;
     local numCriteria = GetAchievementNumCriteria(id);

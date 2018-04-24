@@ -4,7 +4,7 @@
 	@returns {undefined}
 --]]
 function Achievements.RegisterEvent(event)
-    Achievements.Debug("Registering Event: " .. event);
+    --Achievements.Debug("Registering Event: " .. event);
     Achievements.frame:RegisterEvent(event);
 end
 
@@ -15,7 +15,7 @@ end
 	@returns {undefined}
 --]]
 function Achievements.UnregisterEvent(event)
-    Achievements.Debug("Unregistering Event: " .. event);
+    --Achievements.Debug("Unregistering Event: " .. event);
     Achievements.frame:UnregisterEvent(event);
 end
 
@@ -47,7 +47,7 @@ function Achievements.Listen(addEvent)
 		table.insert(Achievements.events, addEvent);
         Achievements.RegisterEvent(addEvent);
 	else
-		Achievements.Debug("Already listening to: " .. addEvent);
+		--Achievements.Debug("Already listening to: " .. addEvent);
 	end
 end
 
@@ -74,7 +74,7 @@ end
 	@returns {undefined}
 ]]--
 function Achievements.OnEvent(event, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12)
-	Achievements.Debug("Event: " .. event);
+	--Achievements.Debug("Event: " .. event);
 	for _, listener in ipairs(Achievements.listeners) do
 		if listener.event == event then
             Achievements.DispatchListener(listener, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12);

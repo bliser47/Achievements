@@ -169,6 +169,7 @@ function AchievementButton_OnClick (self, ignoreModifiers)
     ]]--
 
     if ( self.selected ) then
+        self.highlight:Hide(); -- Remove when below is implemented
         --[[ TODO: Support IsMouseOver
         if ( not self:IsMouseOver() ) then
             self.highlight:Hide();
@@ -299,7 +300,7 @@ function AchievementButton_DisplayAchievement (button, category, achievement, se
         achievements.selection = button.id;
         achievements.selectionIndex = button.index;
         button.selected = true;
-        button.highlight:Show();
+        --button.highlight:Show();
         local height = AchievementButton_DisplayObjectives(button, button.id, button.completed);
         if ( height == ACHIEVEMENTBUTTON_COLLAPSEDHEIGHT ) then
             button:Collapse();
@@ -313,9 +314,11 @@ function AchievementButton_DisplayAchievement (button, category, achievement, se
         ]]--
     elseif ( button.selected ) then
         button.selected = nil;
+        --[[ TODO: Support mouse over
         if ( not button:IsMouseOver() ) then
             button.highlight:Hide();
         end
+        ]]--
         button:Collapse();
         button.description:Show();
         button.hiddenDescription:Hide();
@@ -337,6 +340,9 @@ function AchievementButton_ResetObjectives ()
 end
 
 function AchievementButton_DisplayObjectives (button, id, completed)
+
+    Achievements.Debug("Display objective " .. id);
+
     local objectives = AchievementFrameAchievementsObjectives;
 
     objectives:ClearAllPoints();

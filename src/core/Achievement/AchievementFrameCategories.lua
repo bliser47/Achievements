@@ -10,15 +10,12 @@ end
 
 function AchievementFrameCategories_OnEvent (self, event, params)
 
-
     if ( event == "ADDON_LOADED" ) then
+
         local addonName = params;
-
-
         if ( addonName and addonName ~= "Achievements" ) then
             return;
         end
-
 
         AchievementFrameCategories_GetCategoryList(ACHIEVEMENTUI_CATEGORIES);
 
@@ -39,8 +36,7 @@ function AchievementFrameCategories_OnEvent (self, event, params)
         end
 
         AchievementFrameCategoriesContainerScrollBar.OldHide = AchievementFrameCategoriesContainerScrollBar.Hide;
-        AchievementFrameCategoriesContainerScrollBar.Hide =
-        function (self)
+        AchievementFrameCategoriesContainerScrollBar.Hide = function (self)
             ACHIEVEMENTUI_CATEGORIESWIDTH = 197;
             AchievementFrameCategories:SetWidth(197);
             AchievementFrameCategoriesContainer:GetScrollChild():SetWidth(197);
@@ -256,7 +252,7 @@ function AchievementFrameCategories_UpdateTooltip()
     end
 
     for _, button in next, AchievementFrameCategoriesContainer.buttons do
-        if ( button:IsMouseOver() and button.showTooltipFunc ) then
+            if ( button:IsMouseOver() and button.showTooltipFunc ) then
             button:showTooltipFunc();
             break;
         end

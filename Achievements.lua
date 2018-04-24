@@ -9,8 +9,8 @@ function Achievements_OnLoad()
     Achievements.AddListenerOnce("ADDON_LOADED",function(_, name)
         if name == "Achievements" then
             Achievements.InitializeModel();
-            Achievements.InitializeAchievements();
             Achievements.InitializeCore();
+            Achievements.InitializeAchievements();
         end
     end)
 end

@@ -45,6 +45,6 @@ end
 
 function GetAchievementNumCriteria(id)
     if Achievements.achievements[id] then
-        return table.getn(Achievements.achievements[id].criterias)
+        return table.getn(Achievements.achievements[id].visibleCriteria);
     end
 end

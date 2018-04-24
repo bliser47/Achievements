@@ -256,7 +256,7 @@
                     AchievementButton_OnClick(this);
             </OnClick>
             <OnEnter>
-                    this.highlight:Show();
+                    --this.highlight:Show();
             </OnEnter>
             <OnLeave>
                     if ( not this.selected ) then

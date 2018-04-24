@@ -95,6 +95,9 @@ function AchievementFrameAchievements_Update ()
     local buttons = scrollFrame.buttons;
     -- TODO: When filters get added replace the bottom function with ACHIEVEMENTUI_SELECTEDFILTER
     local numAchievements, numCompleted, completedOffset = AchievementFrame_GetCategoryNumAchievements_All(category);
+
+    Achievements.Debug(numAchievements);
+
     local numButtons = table.getn(buttons);
 
     -- If the current category is feats of strength and there are no entries then show the explanation text
@@ -158,6 +161,7 @@ function AchievementFrameAchievements_ClearSelection ()
     AchievementButton_ResetObjectives();
     for _, button in next, AchievementFrameAchievements.buttons do
         button:Collapse();
+        button.highlight:Hide(); -- Remove when below is implemented
         --[[ TODO: Support mouse over
         if ( not button:IsMouseOver() ) then
             button.highlight:Hide();

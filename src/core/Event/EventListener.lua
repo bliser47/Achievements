@@ -44,7 +44,7 @@ end
 	@return {Object}
 ]]--
 function Achievements.AddListener(event, callback, arg, count)
-	Achievements.Debug("Trying to start listening to: " .. event);
+	--Achievements.Debug("Trying to start listening to: " .. event);
     Achievements.Listen(event);
 	local listener = {
 		event = event,
@@ -64,7 +64,7 @@ end
 	@return null
 ]]--
 function Achievements.RemoveListener(removeListener, explanation)
-    Achievements.Debug("Removing listener: " .. removeListener.event .. " (" .. explanation  .. ")");
+    --Achievements.Debug("Removing listener: " .. removeListener.event .. " (" .. explanation  .. ")");
 	local anyoneElseListening = false;
 	local removeIndexes = {};
 	for index, listener in ipairs(Achievements.listeners) do

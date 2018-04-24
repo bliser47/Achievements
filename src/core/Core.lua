@@ -1,18 +1,44 @@
-SHORTDATE = "%2$d/%1$02d/%3$02d";
-
 Achievements.categories = {};
 Achievements.achievements = {};
+Achievements.criterias = {};
+
+
+Achievements.addCriteria = function(criteria, parent)
+
+    table.insert(Achievements.criterias,criteria);
+    local criteriaID = table.getn(Achievements.criterias);
+
+    criteria.parent = parent;
+    criteria.id = criteriaID
+    criteria.progress = criteria.required and 1 or 0
+    criteria.required = criteria.required or 1;
+    criteria.format = criteria.format or (criteria.required and "%d / %d");
+    criteria.value = criteria.value or function() return 0 end;
+
+    if (criteria.name or criteria.required > 1) and not criteria.hidden  then
+        table.insert(parent.visibleCriteria,criteria.id);
+    end
+
+    return criteriaID;
+end
 
 Achievements.addAchievement = function(achievement)
     table.insert(Achievements.achievements,achievement);
     local achievementId = table.getn(Achievements.achievements);
+    Achievements.Debug(achievement.name);
     if achievement.category then
         table.insert(Achievements.categories[achievement.category].achievementIds,achievementId);
     end
     if Achievements.isAchievementComplete(achievement) then
         achievement.complete = Achievements.getAchievementCompleteDate(achievement);
     end
-    achievement.criterias = achievement.criterias or {};
+
+    local criteriaObjects = achievement.criterias;
+    achievement.visibleCriteria = {};
+    achievement.criterias = {};
+    for _, criteria in ipairs(criteriaObjects) do
+        table.insert(achievement.criterias,Achievements.addCriteria(criteria, achievement));
+    end
     return achievementId;
 end
 
@@ -28,7 +54,7 @@ Achievements.addCategory = function(name, parent)
 end
 
 Achievements.loadAchievement = function(achievement)
-    Achievements.Debug("Loading achievement: " .. achievement.name);
+    --Achievements.Debug("Loading achievement: " .. achievement.name);
     if not achievement.complete then
         for _, criteria in ipairs(achievement.criterias) do
             criteria.parent = achievement;
@@ -39,7 +65,7 @@ end
 
 
 Achievements.loadCriteria = function(criteria)
-    Achievements.Debug("Loading criteria " .. criteria.key);
+    --Achievements.Debug("Loading criteria " .. criteria.key);
     if not criteria.complete then
         for _, event in ipairs(criteria.events) do
             Achievements.loadEvent(event,criteria);
@@ -52,7 +78,7 @@ end
 
 
 Achievements.loadEvent = function(event, criteria, listenCount)
-    Achievements.Debug("Loading event: " .. event);
+    --Achievements.Debug("Loading event: " .. event);
     criteria.listeners = criteria.listeners or {};
     table.insert(criteria.listeners, Achievements.AddListener(event, function(listener, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12)
         Achievements.Debug("Calling criteria objective: " .. criteria.key);
